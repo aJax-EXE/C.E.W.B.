@@ -14,7 +14,7 @@ void setup() {
   // Set encoder pins as inputs
   pinMode(CLK, INPUT);
   pinMode(DT, INPUT);
-  pinMode(SW, INPUT_PULLUP);
+  // pinMode(SW, INPUT_PULLUP);
 
   // Setup Serial Monitor
   Serial.begin(9600);

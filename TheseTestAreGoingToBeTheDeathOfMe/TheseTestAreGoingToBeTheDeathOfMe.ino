@@ -16,15 +16,30 @@
 //   }
 // }
 
-//Code is available on our GitHub 
-//Arduino side Code 
+
 void setup() 
 {
- Serial.begin(9600); // Start serial communication at 9600 baud
- while (!Serial) { ; } // Wait for serial port to connect (for Leonardo/Micro/Zero)
+  Serial.begin(9600); // Start serial communication at 9600 baud
+ 
+  while (!Serial) { ; } // Wait for serial port to connect (for Leonardo/Micro/Zero)
+  Serial.println("Arduino is ready.");
+
 }
+
 void loop() 
 {
-  Serial.println("Hello from Arduino!"); // Send message to PC
-  delay(1000); // Wait for 1 second
+   if (Serial.available() > 0) {
+    
+    char ReceivedChar = Serial.read();//Read data in the Buffer
+
+    switch(ReceivedChar)
+    {
+      case 'A' : Serial.println("26Character A  Received OK");break;
+      case 'B' : Serial.println("26Character B  Received OK");break;
+      case 'C' : Serial.println("26Character C  Received OK");break;
+      default  : Serial.println("28Invalid Character Received");
+      
+    }
+    delay(500);
+  }
 }

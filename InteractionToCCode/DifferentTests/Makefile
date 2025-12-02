@@ -8,10 +8,10 @@ CXX = g++
 CXXFLAGS = -c -g -Wall
 
 # Program Exe File Name
-PROGRAM_NAME = SendDataToTwoFiles.out
+PROGRAM_NAME = Testing.out
 
 # File List
-CPP_FILES = SendDataToTwoFiles.cpp
+CPP_FILES = Timestamps.cpp
 
 build:
 	$(CXX) $(CXXFLAGS) $(CPP_FILES)

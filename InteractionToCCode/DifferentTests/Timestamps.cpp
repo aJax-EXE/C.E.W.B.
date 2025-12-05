@@ -22,7 +22,7 @@ int main() {
         auto end_time = chrono::high_resolution_clock::now();
 
         // Calculate the duration
-        auto duration = chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time);
+        auto duration = chrono::duration_cast<chrono::milliseconds>(end_time - start_time);
 
         cout << "Program ran for: " << duration.count() << " milliseconds." << endl;
         

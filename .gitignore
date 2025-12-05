@@ -1,0 +1,7 @@
+# Remove the .out and .o files
+*.out
+*.o
+
+# Remove the .fzz files
+*.fzz
+

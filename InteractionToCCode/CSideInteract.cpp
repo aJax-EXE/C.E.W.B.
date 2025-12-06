@@ -24,6 +24,7 @@ int main()
   char dataToSend[10];
  
   int fd = open("/dev/ttyACM0", O_RDWR | O_NOCTTY); //open a connection to serialport
+  FILE *fp=fdopen(fd,"rw");
    
    
   sleep(3);  // Delay for 3 seconds,for Arduino to get stabilized,
@@ -53,14 +54,14 @@ int main()
   // serial_port_settings.c_cc[VTIME] = 0; /* Wait for 10 *100ms = 1 second ,measured in increments of 100ms */
   status = tcsetattr(fd,TCSANOW,&serial_port_settings);  // update new settings to termios structure,
                                                          // TCSANOW tells to make the changes now without waiting
- 
-  while(true){
-     /* Flush both input and output buffers to clear out garbage values */
     if (tcflush(fd, TCIOFLUSH) != 0) {
      perror("tcflush");
     }
-    // int tcflushstatus = tcflush(fd, TCIOFLUSH);
-    // cout << "tcflushstatus: " << tcflushstatus << endl;
+    int tcflushstatus = tcflush(fd, TCIOFLUSH);
+    cout << "tcflushstatus: " << tcflushstatus << endl;
+ 
+  while(true){
+     /* Flush both input and output buffers to clear out garbage values */
   
     // Sending Data to the Arduino from the terminal
     cout << "Please Enter either 'A', 'B', or 'C': ";
@@ -70,16 +71,18 @@ int main()
 
     printf("\n\nCharacter Send       = %s" ,dataToSend);
     printf("\nNumber of Bytes Send = %d" ,bytes_written);
-
+    int received_bytes ;
+    char *readData=fgets((char *)serial_read_buffer,100,fp);
     char toBeRead[5];
-    read(fd, toBeRead, 2);
-    cout << "DEBUG: " << atoi(toBeRead) << endl;
+    //read(fd, toBeRead, 2);
+    //toBeRead[2]=0;
+    //cout << "DEBUG: " << atoi(toBeRead) << endl;
     // Getting Data from the Arduino
     // int received_bytes = read(fd,serial_read_buffer, sizeof(serial_read_buffer)-1);
-    int received_bytes = read(fd,serial_read_buffer, atoi(toBeRead));
-    printf("\n\nBytes Received from Serial Port = %d ",received_bytes);
-    printf("\n\nData Received from Serial Port  = %s\n",serial_read_buffer );
+    // read(fd,serial_read_buffer, atoi(toBeRead));
+    //printf("\n\nBytes Received from Serial Port = %d ",received_bytes);
+    printf("\n\nData Received from Serial Port  = %s\n",readData );
   }
-  
+  fclose(fp);
   close(fd);  /* Close the file descriptor*/ 
 }

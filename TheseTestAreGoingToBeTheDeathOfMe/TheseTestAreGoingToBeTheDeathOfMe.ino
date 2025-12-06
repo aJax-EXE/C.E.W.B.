@@ -22,7 +22,7 @@ void setup()
   Serial.begin(9600); // Start serial communication at 9600 baud
  
   while (!Serial) { ; } // Wait for serial port to connect (for Leonardo/Micro/Zero)
-  Serial.println("Arduino is ready.");
+  Serial.print("18Arduino is ready.\n");
 
 }
 
@@ -34,10 +34,10 @@ void loop()
 
     switch(ReceivedChar)
     {
-      case 'A' : Serial.println("26Character A  Received OK");break;
-      case 'B' : Serial.println("26Character B  Received OK");break;
-      case 'C' : Serial.println("26Character C  Received OK");break;
-      default  : Serial.println("28Invalid Character Received");
+      case 'A' : Serial.print("Character A  Received OK\n");break;
+      case 'B' : Serial.print("Character B  Received OK\n");break;
+      case 'C' : Serial.print("Character C  Received OK\n");break;
+      default  : Serial.print("Invalid Character Received\n");
       
     }
     delay(500);

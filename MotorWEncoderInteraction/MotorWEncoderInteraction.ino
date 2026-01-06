@@ -2,15 +2,26 @@
 #define CLK 6 // White Wire
 #define DT 5  // Green Wire
 
+// Motor Drive PMW Pins
+#define MotorIn1 9  // Orange Wire
+#define MotorIn2 10 // Blue Wire
+
 int counter = 0;
 int currentStateCLK;
 int lastStateCLK;
 String currentDir = "";
 
+int PWMVal = 0;
+
 void setup() {
+
   // Set encoder pins as inputs
   pinMode(CLK, INPUT);
   pinMode(DT, INPUT);
+
+  // Setting the Motor Pins
+  pinMode(MotorIn1, OUTPUT);
+  pinMode(MotorIn2, OUTPUT);
 
   // Setup Serial Monitor
   Serial.begin(9600);
@@ -24,7 +35,7 @@ void loop() {
   // Read the current state of CLK
   currentStateCLK = digitalRead(CLK);
 
-  // If last and current state of CLK are different, then pulse occurred
+   // If last and current state of CLK are different, then pulse occurred
   // React to only 1 state change to avoid double count
   if (currentStateCLK != lastStateCLK && currentStateCLK == 1) {
 
@@ -43,7 +54,7 @@ void loop() {
     Serial.print(currentDir);
     Serial.print(" | Counter: ");
     Serial.println(counter);
-  } // else {
+  } //else {
   //   Serial.print("Direction: ");
   //   Serial.print(currentDir);
   //   Serial.print(" | Counter: ");
@@ -54,4 +65,3 @@ void loop() {
   lastStateCLK = currentStateCLK;
 
 }
-

@@ -2,26 +2,17 @@
 #define CLK 6 // White Wire
 #define DT 5  // Green Wire
 
-// Motor Drive PMW Pins
-#define MotorIn1 9  // Orange Wire
-#define MotorIn2 10 // Blue Wire
 
 int counter = 0;
 int currentStateCLK;
 int lastStateCLK;
 String currentDir = "";
 
-int PWMVal = 0;
-
 void setup() {
 
   // Set encoder pins as inputs
   pinMode(CLK, INPUT);
   pinMode(DT, INPUT);
-
-  // Setting the Motor Pins
-  pinMode(MotorIn1, OUTPUT);
-  pinMode(MotorIn2, OUTPUT);
 
   // Setup Serial Monitor
   Serial.begin(9600);

@@ -1,3 +1,4 @@
+// USES THE STRING VARIABLE
 // Setting the variables that the format will carry
 float voltage, angle, Kp, Ki, Kd;
 String infoLabel, angleType;

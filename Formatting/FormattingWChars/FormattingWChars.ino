@@ -1,5 +1,5 @@
 // Setting the variables that the format will carry (Change the values to see the results)
-// USES THE STRING VARIABLE
+// USES CHAR ARRAYS
 // The first value should indicate if the info is the Master/Setting form '$' or the Feedback form '#'
 char infoType = '$';
 
@@ -16,10 +16,16 @@ float Kp = 9;
 float Ki = 0.1;
 float Kd = 3.5;
 
+// The size of the char array buffer for which will tell how big the formatted info will be
+const int bufferSize = 49;
+
+
 // The end character is '!', which signals the end of the information
 
 // The complete information format that needs to be dissected (and the temp info variable)
-String info, tempInfo;
+char info[bufferSize] = " ";
+char tempInfo[10] = " ";
+// String info, tempInfo;
 
 // Check if all of the values are formatted correctly or can be formatted correctly
 bool correctFormat, done = false;
@@ -45,20 +51,27 @@ void loop() {
       done = true;
     } else if (correctFormat == true) {
       // Check succeeds - Adding the voltage info
-      tempInfo = String(infoType) + "V" + transferVoltage(voltage);
-      info = tempInfo;
+      // tempInfo = String(infoType) + "V" + transferVoltage(voltage);
+      // info = tempInfo;
+      info[0] = infoType;
+      dtostrf(voltage, 1, 4, tempInfo);
+      strcat(info, tempInfo);
 
-      // Adding the angle info
-      tempInfo = "A" + String(angleType) + transferOthers(angle);
-      info += tempInfo;
-
-      // Adding the PID controller info
-      tempInfo = ";P" + transferOthers(Kp) + "I" + transferOthers(Ki) + "D" + transferOthers(Kd) + "!";
-      info += tempInfo;
+      Serial.println(tempInfo);
       Serial.println(info);
 
-      // The overall length of the formatted information string should be 48 characters long
-      Serial.println(info.length());
+      // // Adding the angle info
+      // tempInfo = "A" + String(angleType) + transferOthers(angle);
+      // info += tempInfo;
+      info[strlen(info)] = 'A';
+
+      // // Adding the PID controller info
+      // tempInfo = ";P" + transferOthers(Kp) + "I" + transferOthers(Ki) + "D" + transferOthers(Kd) + "!";
+      // info += tempInfo;
+      // Serial.println(info);
+
+      // // The overall length of the formatted information string should be 48 characters long
+      // Serial.println(info.length());
       done = true;
     }
   }
@@ -77,16 +90,16 @@ bool formatCheck(char infoType, float voltage, char angleType, float angle, floa
   } else { return true; }
 }
 
-String transferVoltage(float voltage) {
-  if (voltage < 10) {
-    return "0" + String(voltage, 4);
-  } else { return String(voltage, 4); }
-}
+// String transferVoltage(float voltage) {
+//   if (voltage < 10) {
+//     return "0" + String(voltage, 4);
+//   } else { return String(voltage, 4); }
+// }
 
-String transferOthers(float value) {
-  if (value < 100 && value > 10) {
-    return "0" + String(value, 4);
-  } else if (value < 100 && value < 10) {
-    return "00" + String(value, 4);
-  } else { return String(value, 4); }
-} 
+// String transferOthers(float value) {
+//   if (value < 100 && value > 10) {
+//     return "0" + String(value, 4);
+//   } else if (value < 100 && value < 10) {
+//     return "00" + String(value, 4);
+//   } else { return String(value, 4); }
+// } 

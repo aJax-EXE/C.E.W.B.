@@ -1,19 +1,10 @@
-#include <iostream> 
-#include <fstream>
-#include <fcntl.h> // file open flags and open()
+#include <fcntl.h>    /* file open flags and open() */
+#include <termios.h>
 #include <unistd.h>
-#include <string.h>
-#include <string>
 #include <stdio.h>
 #include <stdlib.h>
-#include <termios.h>
-#include <chrono>
-#include <thread>
-#include <ctime>
-#include <iomanip>
-#include <sstream>
-#include <sys/stat.h>
-#include <cstring>
+#include <string.h>
+#include <iostream>
 
 using namespace std;
 

@@ -65,6 +65,9 @@ void loop() {
   // Convert count to angle (degrees)
   float angle = (count * 360.0) / 2048.0;
 
+  // Convert count to radians
+  float rads = (count * 2 * pi) / 2048.0;
+
   Serial.print("Count: ");
   Serial.print(count);
   Serial.print(" | Angle: ");

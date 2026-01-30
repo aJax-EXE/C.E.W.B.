@@ -17,22 +17,23 @@ float Ki = 0.1;
 float Kd = 3.5;
 
 // The size of the char array buffer for which will tell how big the formatted info will be
-const int bufferSize = 49;
-
+const int bufferSize = 50;
 
 // The end character is '!', which signals the end of the information
 
 // The complete information format that needs to be dissected (and the temp info variable)
 char info[bufferSize] = " ";
-char tempInfo[10] = " ";
+char tempInfo[16] = " ";
 // String info, tempInfo;
 
 // Check if all of the values are formatted correctly or can be formatted correctly
 bool correctFormat, done = false;
 
+// Binary counter for ease of function access and char insertion
+bool count = 0b000;
+
 bool formatCheck(char, float, char, float, float, float, float);
-String transferVoltage(float);
-String transferOthers(float);
+void transferValue(float, char*, bool&);
 
 void setup() {
   // put your setup code here, to run once:
@@ -51,33 +52,49 @@ void loop() {
       done = true;
     } else if (correctFormat == true) {
       // Check succeeds - Adding the voltage info
-      // tempInfo = String(infoType) + "V" + transferVoltage(voltage);
-      // info = tempInfo;
       info[0] = infoType;
-      dtostrf(voltage, 1, 4, tempInfo);
-      strcat(info, tempInfo);
+      info[strlen(info)] = 'V';
+      transferValue(voltage, tempInfo);
 
-      Serial.println(tempInfo);
+      strcat(info, tempInfo);
+      tempInfo[0] = '\0';
+
+      // Adding the angle info
+      info[strlen(info)] = 'A';
+      info[strlen(info)] = angleType;
+      transferValue(angle, tempInfo);
+
+      strcat(info, tempInfo);
+      tempInfo[0] = '\0';
+      
+      // Adding the PID controller info
+      strcat(info, ";P");
+      transferValue(Kp, tempInfo);
+
+      strcat(info, tempInfo);
+      tempInfo[0] = '\0';
+
+      info[strlen(info)] = 'I';
+      transferValue(Ki, tempInfo);
+
+      strcat(info, tempInfo);
+      tempInfo[0] = '\0';
+
+      info[strlen(info)] = 'D';
+      transferValue(Kd, tempInfo);
+
+      strcat(info, tempInfo);
+      info[strlen(info)] = '!';
       Serial.println(info);
 
-      // // Adding the angle info
-      // tempInfo = "A" + String(angleType) + transferOthers(angle);
-      // info += tempInfo;
-      info[strlen(info)] = 'A';
-
-      // // Adding the PID controller info
-      // tempInfo = ";P" + transferOthers(Kp) + "I" + transferOthers(Ki) + "D" + transferOthers(Kd) + "!";
-      // info += tempInfo;
-      // Serial.println(info);
-
-      // // The overall length of the formatted information string should be 48 characters long
-      // Serial.println(info.length());
+      // // The overall length of the formatted information array should be 49 characters long
+      Serial.println(strlen(info));
       done = true;
     }
   }
 }
 
-// Function that checks if the given values 
+// Function that checks if the given values are valid and can be formatted correctly
 bool formatCheck(char infoType, float voltage, char angleType, float angle, float Kp, float Ki, float Kd) {
   if (infoType != '$' && infoType != '#') {
     return false;
@@ -90,16 +107,17 @@ bool formatCheck(char infoType, float voltage, char angleType, float angle, floa
   } else { return true; }
 }
 
-// String transferVoltage(float voltage) {
-//   if (voltage < 10) {
-//     return "0" + String(voltage, 4);
-//   } else { return String(voltage, 4); }
-// }
+// Function that turns the float values into there proper form of XXX.XXXX into a char array
+void transferValue(float value, char* temp, bool& count) {
+  int whole = (int)value;
+  int frac  = round((value - whole) * 10000);
 
-// String transferOthers(float value) {
-//   if (value < 100 && value > 10) {
-//     return "0" + String(value, 4);
-//   } else if (value < 100 && value < 10) {
-//     return "00" + String(value, 4);
-//   } else { return String(value, 4); }
-// } 
+  switch (count) {
+    case 1:
+    
+  }
+  if (count == 0) {
+    snprintf(temp, 16, "%03d.%04d", whole, frac);
+  }
+  
+} 

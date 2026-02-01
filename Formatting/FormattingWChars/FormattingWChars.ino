@@ -1,51 +1,55 @@
 // Setting the variables that the format will carry (Change the values to see the results)
 // USES CHAR ARRAYS
-// The first value should indicate if the info is the Master/Setting form '$' or the Feedback form '#'
-char infoType = '$';
 
-// Voltage should have the form XX.XXXX
-float voltage = 12.3220;
+// Struct of the different type of variables that will be given the information from the char array
+struct parsedData {
+  // The first value should indicate if the info is the Master/Setting form '$' or the Feedback form '#'
+  char infoType = '$';
 
-// The angle type either be a 'D' for degrees or 'R' for radians
-char angleType = 'D';
-// Angle, regardless of the type, should have the form XXX.XXXX
-float angle = 44.8745;
+  // Voltage should have the form XX.XXXX
+  float voltage = 12.3220;
 
-// The Kp, Ki, and Kd values should have the form XXX.XXXX
-float Kp = 9;
-float Ki = 0.1;
-float Kd = 3.5;
+  // The angle type either be a 'D' for degrees or 'R' for radians
+  char angleType = 'D';
+
+  // Angle, regardless of the type, should have the form XXX.XXXX
+  float angle = 44.8745;
+
+  // The Kp, Ki, and Kd values should have the form XXX.XXXX
+  float Kp = 9;
+  float Ki = 0.1;
+  float Kd = 3.5;
+};
 
 // The size of the char array buffer for which will tell how big the formatted info will be
 const int bufferSize = 50;
 
 // The end character is '!', which signals the end of the information
-
 // The complete information format that needs to be dissected (and the temp info variable)
 char info[bufferSize] = " ";
-// char tempInfo[16] = " ";
 
 // Check if all of the values are formatted correctly or can be formatted correctly
 bool correctFormat, done = false;
 
 // Binary counter to determine what values are incorrect and need to be fixed (And with the different types of error values that can exist)
 uint8_t errorVal = 0b000000;
-enum {
-  INFO_TYPE_ERROR = 0b100000,
-  VOLT_ERROR = 0b010000,
+enum Errors {
+  INFO_TYPE_ERROR  = 0b100000,
+  VOLT_ERROR       = 0b010000,
   ANGLE_TYPE_ERROR = 0b001000,
-  KP_ERROR = 0b000100,
-  KI_ERROR = 0b000010,
-  KD_ERROR = 0b000001
-} ;
+  KP_ERROR         = 0b000100,
+  KI_ERROR         = 0b000010,
+  KD_ERROR         = 0b000001
+};
 
-
+// Functions used for the formatting
 bool formatCheck(char, float, char, float, float, float, float, byte&);
 void transferValues(char, float, char, float, float, float, float, char*, int);
 
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
+  Serial.println("=================================");
 }
 
 void loop() {
@@ -80,45 +84,42 @@ void loop() {
       
       Serial.println("Please review and try again.");
       done = true;
-    }
-    else {
-      // Check succeeds
-      transferValues(infoType, voltage, angleType, angle, Kp, Ki, Kd, info, bufferSize);
+    } else {
+        // Check succeeds
+        transferValues(infoType, voltage, angleType, angle, Kp, Ki, Kd, info, bufferSize);
 
-      // The overall length of the formatted information array should be 49 characters long (48 info characters + '\0' (null character))
-      Serial.print("Formatted Info: ");
-      Serial.println(info);
-      Serial.print("Number of info characters: ");
-      Serial.println(strlen(info));
-      Serial.print("Number of total characters: ");
-      Serial.println(strlen(info) + 1);
-      done = true;
+        // The overall length of the formatted information array should be 49 characters long (48 info characters + '\0' (null character))
+        Serial.print("Formatted Info: ");
+        Serial.println(info);
+        Serial.print("Number of info characters: ");
+        Serial.println(strlen(info));
+        Serial.print("Number of total characters: ");
+        Serial.println(strlen(info) + 1);
+        done = true;
     }
-
-    // done == true
   }
 }
 
 // Function that checks if the given values are valid and can be formatted correctly
 bool formatCheck(char infoType, float voltage, char angleType, float Kp, float Ki, float Kd, byte& error) {
   if (infoType != '$' && infoType != '#') {
-    error |= 0b100000;
+    error |= INFO_TYPE_ERROR;
   }
   if (voltage/100 >= 1) { 
-    error |= 0b010000;
+    error |= VOLT_ERROR;
   }
   if (angleType != 'D' && angleType != 'R') {
-    error |= 0b001000;
+    error |= ANGLE_TYPE_ERROR;
   }
   if (Kp/1000 >= 1 || Ki/1000 >= 1 || Kd/1000 >= 1){
     if (Kp/1000 >= 1) {
-      error |= 0b000100;
+      error |= KP_ERROR;
     } 
     if (Ki/1000 >= 1) {
-      error |= 0b000010;
+      error |= KI_ERROR;
     }
     if (Kd/1000 >= 1) {
-      error |= 0b000001;
+      error |= KD_ERROR;
     }
   }
 

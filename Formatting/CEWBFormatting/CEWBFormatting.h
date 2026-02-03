@@ -29,14 +29,14 @@ struct parsedData {
 };
 
 // Function that will run as the instant fail state for any error to keep the output of the variables going
-static void failState(char* info, char& infoLabel, char& angleType, float& voltage, 
+static void failState(char* info, char& infoType, char& angleType, float& voltage, 
                  float& angle, float& Kp, float& Ki, float& Kd, char* errMsg);
 
-void parseFormat(char* info, char& infoLabel, char& angleType, float& voltage, 
+void parseFormat(char* info, char& infoType, char& angleType, float& voltage, 
                  float& angle, float& Kp, float& Ki, float& Kd, char* errMsg);
 
 
-void formatInfo(char* info, char infoLabel, char angleType, float voltage, 
+void formatInfo(char* info, char infoType, char angleType, float voltage, 
                 float angle, float Kp, float Ki, float Kd, char* errMsg);
 
 #endif

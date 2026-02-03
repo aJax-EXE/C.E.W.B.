@@ -49,16 +49,12 @@ void loop() {
     Serial.println(results.errMsg);
     Serial.println("=================================");
 
-    formatInfo(finalInfo, results.infoType, results.voltage, results.angleType, results.angle,
+    formatInfo(finalInfo, results.infoType, results.angleType,  results.voltage, results.angle,
                     results.Kp, results.Ki, results.Kd, results.errMsg);
     
     // Print all of the struct variable values
     Serial.print("Formatted Info: ");
     Serial.println(finalInfo);
-
-    // Compare the two char by char
-    // bool compare = strcmp(startInfo, finalInfo);
-    // compare ? Serial.println("They are the same") : Serial.println("They are not the same");
 
     done = true;
   }

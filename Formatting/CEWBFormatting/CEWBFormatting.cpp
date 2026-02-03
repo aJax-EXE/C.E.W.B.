@@ -253,7 +253,7 @@ void parseFormat(char* info, char& infoType, char& angleType, float& voltage,
 // Function to put all of the info together to be sent off
 void formatInfo(char* info, char infoType, char angleType, float voltage,
                 float angle, float Kp, float Ki, float Kd, char* errMsg) {
-  if (infoType != '$' && infoType != '#') {
+  if (infoType != 'M' && infoType != 'F') {
     errorVal |= INFO_TYPE_ERROR;
     failState(info, infoType, angleType, voltage, angle, Kp, Ki, Kd, errMsg);
     return;
@@ -287,7 +287,7 @@ void formatInfo(char* info, char infoType, char angleType, float voltage,
   }
 
   // Variables for the whole number and decimal points of each value
-  const int bufferSize = 50;
+  char infoChar = (infoType == 'M') ? '$' : '#';
 
   int wholeVolt = (int)voltage;
   int wholeAng = (int)angle;
@@ -303,6 +303,6 @@ void formatInfo(char* info, char infoType, char angleType, float voltage,
 
   // Combining all of the variables together into the necessary format
   snprintf(info, bufferSize, "%cV%02d.%04dA%c%03d.%04d;P%03d.%04dI%03d.%04dD%03d.%04d!", 
-           infoType, wholeVolt, fracVolt, angleType, wholeAng, fracAng, wholeKp, fracKp, 
+           infoChar, wholeVolt, fracVolt, angleType, wholeAng, fracAng, wholeKp, fracKp, 
            wholeKi, fracKi, wholeKd, fracKd);
 }

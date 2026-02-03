@@ -36,10 +36,6 @@ void parseFormat(char* info, char& infoLabel, char& angleType, float& voltage,
                  float& angle, float& Kp, float& Ki, float& Kd, char* errMsg);
 
 
-// Checker function that makes sure the given values are valid and can be formatted correctly (Formatting only)
-static bool formatCheck(char infoType, float voltage, char angleType, float Kp, 
-                        float Ki, float Kd, byte& error);
-
 void formatInfo(char* info, char infoLabel, char angleType, float voltage, 
                 float angle, float Kp, float Ki, float Kd, char* errMsg);
 

@@ -1,13 +1,10 @@
-// Setting the variables that the format will carry (Change the values to see the results)
-// USES CHAR ARRAYS
-
 // Struct of the different type of variables that will be given the information from the char array
 struct parsedData {
   // The first value should indicate if the info is the Master/Setting form '$' or the Feedback form '#'
   char infoType = '$';
 
   // Voltage should have the form XX.XXXX
-  float voltage = 12.3220;
+  float voltage = 112.3220;
 
   // The angle type either be a 'D' for degrees or 'R' for radians
   char angleType = 'D';
@@ -28,14 +25,10 @@ struct parsedData {
 // Creating the struct
 parsedData results;
 
-// The size of the char array buffer for which will tell how big the formatted info will be
 const int bufferSize = 50;
 
-// The end character is '!', which signals the end of the information
-// The complete information format that needs to be dissected (and the temp info variable)
 char info[bufferSize] = " ";
 
-// Check if all of the values are formatted correctly or can be formatted correctly
 bool correctFormat, done = false;
 
 // Binary counter to determine what values are incorrect and need to be fixed 
@@ -50,7 +43,6 @@ enum Errors {
   KD_ERROR         = 0b000001
 };
 
-// Functions used for the formatting
 void checkAndFormat();
 void failState();
 
@@ -140,3 +132,5 @@ void failState() {
 
   strcpy(results.errMsg, "Error with the given information");
 }
+
+

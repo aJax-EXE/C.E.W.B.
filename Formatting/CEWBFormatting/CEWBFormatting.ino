@@ -9,7 +9,8 @@ bool done = false;
 const int bufferSize = 50;
 
 // The complete information format that needs to be dissected (and the temp info variable)
-char info[bufferSize] = "$V12.3220AD044.8745;P009.0000I000.1000D003.5000!";
+char startInfo[bufferSize] = "$V12.3220AD044.8745;P009.0000I000.1000D003.5000!";
+char finalInfo[bufferSize] = " ";
 
 void setup() {
   // put your setup code here, to run once:
@@ -21,8 +22,12 @@ void setup() {
 void loop() {
   // 'done' variable makes sure the code only runs once
   while (!done) {
+    // Printing the initial information as it is
+    Serial.print("Initial Info State: ");
+    Serial.println(startInfo);
+
     // Checking the formatting and values of the info char array to be parsed
-    parseFormat(info, results.infoType, results.angleType, results.voltage, 
+    parseFormat(startInfo, results.infoType, results.angleType, results.voltage, 
                 results.angle, results.Kp, results.Ki, results.Kd, results.errMsg);
   
     // Print all of the struct variable values
@@ -42,6 +47,18 @@ void loop() {
     Serial.println(results.Kd, 4);
     Serial.print("Error Message: ");
     Serial.println(results.errMsg);
+    Serial.println("=================================");
+
+    formatInfo(finalInfo, results.infoType, results.voltage, results.angleType, results.angle,
+                    results.Kp, results.Ki, results.Kd, results.errMsg);
+    
+    // Print all of the struct variable values
+    Serial.print("Formatted Info: ");
+    Serial.println(finalInfo);
+
+    // Compare the two char by char
+    // bool compare = strcmp(startInfo, finalInfo);
+    // compare ? Serial.println("They are the same") : Serial.println("They are not the same");
 
     done = true;
   }

@@ -283,18 +283,6 @@ void failState() {
   results.Ki = 0;
   results.Kd = 0;
 
-  Serial.print("Check val: ");
-  Serial.println(charCheck);
-  Serial.print("incorrect val: ");
-  Serial.println(incorrectChar);
-  Serial.print("short val: ");
-  Serial.println(tooShort);
-  // Outputting the correct reason of error message
-  if (charCheck & incorrectChar) {
-    Serial.println(charCheck);
-    strcpy(results.errMsg, "Characters in the wrong order");
-  } else if (charCheck & tooShort) {
-    Serial.println(charCheck);
-    strcpy(results.errMsg, "Info too short");
-  }
+  // Outputting the correct reason of error message  
+  strcpy(results.errMsg, "Error with the given information");
 }

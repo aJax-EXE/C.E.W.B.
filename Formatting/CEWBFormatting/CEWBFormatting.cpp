@@ -57,13 +57,7 @@ static void failState(char* info, char& infoType, char& angleType, float& voltag
   Ki = 0;
   Kd = 0;
    
-  // Outputting the correct reason of error message
-  if (charCheck & incorrectChar) {
-    strcpy(errMsg, "Characters in the wrong order");
-  } else if (charCheck & tooShort) {
-    strcpy(errMsg, "Info too short");
-  }
-
+  strcpy(errMsg, "Error with the given information");
 }
 
 // Function to break the info up into its smaller components
@@ -256,14 +250,59 @@ void parseFormat(char* info, char& infoType, char& angleType, float& voltage,
   }
 }
 
-// Checker function that makes sure the given values are valid and can be formatted correctly (Formatting only)
-static bool formatCheck(char infoType, float voltage, char angleType, float Kp,
-                        float Ki, float Kd, byte& error) {
-}
-
-
 // Function to put all of the info together to be sent off
-void formatInfo(char infoLabel, char angleType, float voltage,
-                float angle, float Kp, float Ki, float Kd, char* info,
-                int bufferSize) {
+void formatInfo(char* info, char infoType, char angleType, float voltage,
+                float angle, float Kp, float Ki, float Kd, char* errMsg) {
+  if (infoType != '$' && infoType != '#') {
+    errorVal |= INFO_TYPE_ERROR;
+    failState(info, infoType, angleType, voltage, angle, Kp, Ki, Kd, errMsg);
+    return;
+  }
+  if (voltage/100 >= 1) { 
+    errorVal |= VOLT_ERROR;
+    failState(info, infoType, angleType, voltage, angle, Kp, Ki, Kd, errMsg);
+    return;
+  }
+  if (angleType != 'D' && angleType != 'R') {
+    errorVal |= ANGLE_TYPE_ERROR;
+    failState(info, infoType, angleType, voltage, angle, Kp, Ki, Kd, errMsg);
+    return;
+  }
+  if (Kp/1000 >= 1 || Ki/1000 >= 1 || Kd/1000 >= 1){
+    if (Kp/1000 >= 1) {
+      errorVal |= KP_ERROR;
+      failState(info, infoType, angleType, voltage, angle, Kp, Ki, Kd, errMsg);
+      return;
+    } 
+    if (Ki/1000 >= 1) {
+      errorVal |= KI_ERROR;
+      failState(info, infoType, angleType, voltage, angle, Kp, Ki, Kd, errMsg);
+      return;
+    }
+    if (Kd/1000 >= 1) {
+      errorVal |= KD_ERROR;
+      failState(info, infoType, angleType, voltage, angle, Kp, Ki, Kd, errMsg);
+      return;
+    }
+  }
+
+  // Variables for the whole number and decimal points of each value
+  const int bufferSize = 50;
+
+  int wholeVolt = (int)voltage;
+  int wholeAng = (int)angle;
+  int wholeKp = (int)Kp;
+  int wholeKi = (int)Ki;
+  int wholeKd = (int)Kd;
+
+  int fracVolt = round((voltage - wholeVolt) * 10000);
+  int fracAng  = round((angle - wholeAng) * 10000);
+  int fracKp  = round((Kp - wholeKp) * 10000);
+  int fracKi  = round((Ki - wholeKi) * 10000);
+  int fracKd  = round((Kd - wholeKd) * 10000);
+
+  // Combining all of the variables together into the necessary format
+  snprintf(info, bufferSize, "%cV%02d.%04dA%c%03d.%04d;P%03d.%04dI%03d.%04dD%03d.%04d!", 
+           infoType, wholeVolt, fracVolt, angleType, wholeAng, fracAng, wholeKp, fracKp, 
+           wholeKi, fracKi, wholeKd, fracKd);
 }

@@ -1,4 +1,8 @@
 #include "CEWBFormatting.h"
+#include <cstdint> // Required for uint8_t and uint16_t
+#include <cstring> // Required for strcpy and strncpy
+#include <cmath>   // Required for the round function
+#include <stdio.h> // Required for the snprintf function
 
 // The end character is '!', which signals the end of the information
 char endBit = '!';

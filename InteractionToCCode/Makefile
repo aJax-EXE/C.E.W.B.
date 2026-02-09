@@ -10,11 +10,16 @@ CXXFLAGS = -c -g -Wall
 # Program Exe File Name
 PROGRAM_NAME = Testing.out
 
+# Library File Location
+# Enter the file path to the libraries needed to run the code here:
+Lib_Location = ../Libraries/FormattingC++/CEWBFormatting.cpp
+
 # File List
-CPP_FILES = CSideInteract.cpp
+# CPP_FILES = CSideInteract.cpp
+CPP_FILES = LibraryTest.cpp 
 
 build:
-	$(CXX) $(CXXFLAGS) $(CPP_FILES)
+	$(CXX) $(CXXFLAGS) $(CPP_FILES) $(Lib_Location)
 	$(CXX) -o $(PROGRAM_NAME) *.o
 
 run:

@@ -10,21 +10,16 @@ CXX = g++
 CXXFLAGS = -c -g -Wall -std=c++17
 
 # the build target executable file; .exe is not required
-PROGRAM = LibraryTest.out
-
-# Library File Location
-# Enter the file path to the libraries needed to run the code here:
-# Needs to be the .cpp file that ends up here
-Lib_Location = CEWBFormatting.cpp
+PROGRAM = main.out
 
 # list all .cpp files separated by space
-CPPFILES = LibraryTest.cpp 
+CPPFILES = main.cpp src/*
 
 # make all rule/default rule that'll be run when we run "make"
 # first compile each file to object file
 # then make a single binary program
 all:
-	$(CXX) $(CXXFLAGS) $(CPPFILES) $(Lib_Location)
+	$(CXX) $(CXXFLAGS) $(CPPFILES)
 	$(CXX) -o $(PROGRAM) *.o
 
 # make clean rule

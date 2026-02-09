@@ -1,4 +1,4 @@
-int value = 0;
+int motorValue = 0;
 
 void setup() {
   Serial.begin(9600);
@@ -6,14 +6,14 @@ void setup() {
 
 void loop() {
 
-  // Receive value from PC
-  if (Serial.available()) {
-    value = Serial.parseInt();
+  if (Serial.available() > 0) {
+    motorValue = Serial.parseInt();
+    while (Serial.available()) Serial.read();  // clear buffer
   }
 
-  // Send telemetry back
-  Serial.print("Value=");
-  Serial.println(value);
+  Serial.print("Motor=");
+  Serial.println(motorValue);
 
   delay(100);
 }
+

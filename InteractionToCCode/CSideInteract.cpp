@@ -88,7 +88,7 @@ int main() {
                     auto now = chrono::steady_clock::now();
                     long ms = chrono::duration_cast<chrono::milliseconds>(now - startTime).count();
 
-                    cout << ms << "," << line << endl;
+                    // cout << ms << "," << line << endl;
 
                     log1 << ms << "," << line << "\n";
                     log2 << ms << "," << line << "\n";

@@ -15,8 +15,7 @@ PROGRAM_NAME = Testing.out
 Lib_Location = ../Libraries/FormattingC++/CEWBFormatting.cpp
 
 # File List
-# CPP_FILES = CSideInteract.cpp
-CPP_FILES = LibraryTest.cpp 
+CPP_FILES = CSideInteract.cpp
 
 build:
 	$(CXX) $(CXXFLAGS) $(CPP_FILES) $(Lib_Location)

@@ -23,6 +23,7 @@ void loop() {
   digitalWrite(MotorIn1, LOW);
   for (PWMVal; PWMVal <= PWMLim; PWMVal++) {
     analogWrite(MotorIn2, PWMVal);
+    Serial.println("Ramping up Speed Forward!");
     delay(10);
   }
 
@@ -32,6 +33,7 @@ void loop() {
   // Ramp Down Forward
   for (PWMVal; PWMVal >= 0; PWMVal--) {
     analogWrite(MotorIn2, PWMVal);
+    Serial.println("Ramping down Speed Forward!");
     delay(10);
   }
 
@@ -39,6 +41,7 @@ void loop() {
   digitalWrite(MotorIn2, LOW);
   for (PWMVal; PWMVal <= PWMLim; PWMVal++) {
     analogWrite(MotorIn1, PWMVal);
+    Serial.println("Ramping up Speed Backwards!");
     delay(10);
   }
 
@@ -48,6 +51,9 @@ void loop() {
   // Ramp Down Backwards
   for (PWMVal; PWMVal >= 0; PWMVal--) {
     analogWrite(MotorIn1, PWMVal);
+    Serial.println("Ramping down Speed Backwards!");
     delay(10);
   }
+
+  // PWMVal = 0;
 }

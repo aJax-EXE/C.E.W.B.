@@ -1,4 +1,4 @@
-int motorValue = 0;
+int value = 0;
 
 void setup() {
   Serial.begin(9600);
@@ -7,12 +7,12 @@ void setup() {
 void loop() {
 
   if (Serial.available() > 0) {
-    motorValue = Serial.parseInt();
+    value = Serial.parseInt();
     while (Serial.available()) Serial.read();  // clear buffer
   }
 
-  Serial.print("Motor=");
-  Serial.println(motorValue);
+  Serial.print("Value = ");
+  Serial.println(value);
 
   delay(100);
 }

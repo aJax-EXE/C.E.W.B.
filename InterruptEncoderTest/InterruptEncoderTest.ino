@@ -1,6 +1,6 @@
 // ================= ENCODER PINS =================
-#define ENC_A 2   // INT0
-#define ENC_B 3   // INT1
+#define ENC_A 2   // INT0; Green Wire
+#define ENC_B 3   // INT1; White Wire
 
 // ================= ENCODER VARIABLES =================
 volatile long encoderCount = 0;
@@ -64,7 +64,6 @@ void loop() {
 
   // Convert count to angle (degrees)
   float angle = (count * 360.0) / 2048.0;
-
   // Convert count to radians
   float rads = (count * 2 * PI) / 2048.0;
 

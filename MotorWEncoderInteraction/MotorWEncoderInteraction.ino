@@ -1,67 +1,117 @@
-// Rotary Encoder Inputs
-#define CLK 6 // White Wire
-#define DT 5  // Green Wire
+// ================= CONFIG =================
+#define ENC_A 2
+#define ENC_B 3
 
-// Motor Drive PMW Pins
-#define MotorIn1 9  // Orange Wire
-#define MotorIn2 10 // Blue Wire
+#define IN1 9   // PWM pin
+#define IN2 8
 
-int counter = 0;
-int currentStateCLK;
-int lastStateCLK;
-String currentDir = "";
+// encoder resolution AFTER quadrature
+// example: 600 CPR encoder → 2400 counts
+const float COUNTS_PER_REV = 2400.0;
 
-int PWMVal = 0;
+// PID gains (tune these!)
+float Kp = 4.0;
+float Ki = 0.02;
+float Kd = 0.2;
+
+// ================= GLOBALS =================
+
+volatile long encoderCount = 0;
+
+float targetAngle = 90.0;   // degrees (change this!)
+
+float integral = 0;
+float lastError = 0;
+
+unsigned long lastTime;
+
+// ================= ENCODER ISR =================
+
+void encoderISR() {
+  bool A = digitalRead(ENC_A);
+  bool B = digitalRead(ENC_B);
+
+  if (A == B) encoderCount++;
+  else encoderCount--;
+}
+
+// ================= SETUP =================
 
 void setup() {
+  Serial.begin(115200);
 
-  // Set encoder pins as inputs
-  pinMode(CLK, INPUT);
-  pinMode(DT, INPUT);
+  pinMode(ENC_A, INPUT_PULLUP);
+  pinMode(ENC_B, INPUT_PULLUP);
 
-  // Setting the Motor Pins
-  pinMode(MotorIn1, OUTPUT);
-  pinMode(MotorIn2, OUTPUT);
+  pinMode(IN1, OUTPUT);
+  pinMode(IN2, OUTPUT);
 
-  // Setup Serial Monitor
-  Serial.begin(9600);
+  attachInterrupt(digitalPinToInterrupt(ENC_A), encoderISR, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(ENC_B), encoderISR, CHANGE);
 
-  // Read the initial state of CLK
-  lastStateCLK = digitalRead(CLK);
+  lastTime = millis();
 }
+
+// ================= MOTOR DRIVER =================
+
+void setMotor(float value) {
+
+  value = constrain(value, -255, 255);
+
+  if (value > 0) {
+    // Forward
+    analogWrite(IN1, value);
+    digitalWrite(IN2, LOW);
+  }
+  else if (value < 0) {
+    // Reverse
+    analogWrite(IN1, -value);
+    digitalWrite(IN2, HIGH);
+  }
+  else {
+    // Brake / coast
+    digitalWrite(IN1, LOW);
+    digitalWrite(IN2, LOW);
+  }
+}
+
+
+// ================= MAIN LOOP =================
 
 void loop() {
 
-  // Read the current state of CLK
-  currentStateCLK = digitalRead(CLK);
+  // ----- Time step -----
+  unsigned long now = millis();
+  float dt = (now - lastTime) / 1000.0;
+  lastTime = now;
 
-   // If last and current state of CLK are different, then pulse occurred
-  // React to only 1 state change to avoid double count
-  if (currentStateCLK != lastStateCLK && currentStateCLK == 1) {
+  // ----- Get angle -----
+  noInterrupts();
+  long counts = encoderCount;
+  interrupts();
 
-    // If the DT state is different than the CLK state then
-    // the encoder is rotating CCW so decrement
-    if (digitalRead(DT) != currentStateCLK) {
-      counter--;
-      currentDir = "CCW";
-    } else {
-      // Encoder is rotating CW so increment
-      counter++;
-      currentDir = "CW";
-    }
+  float angle = counts * 360.0 / COUNTS_PER_REV;
 
-    Serial.print("Direction: ");
-    Serial.print(currentDir);
-    Serial.print(" | Counter: ");
-    Serial.println(counter);
-  } //else {
-  //   Serial.print("Direction: ");
-  //   Serial.print(currentDir);
-  //   Serial.print(" | Counter: ");
-  //   Serial.println(counter);
-  // }
+  // ----- PID -----
+  float error = targetAngle - angle;
 
-  // Remember last CLK state
-  lastStateCLK = currentStateCLK;
+  integral += error * dt;
+  integral = constrain(integral, -100, 100);   // anti-windup
 
+  float derivative = (error - lastError) / dt;
+  lastError = error;
+
+  float output = Kp * error + Ki * integral + Kd * derivative;
+
+  // ----- Drive motor -----
+  setMotor(output);
+
+  // ----- Debug -----
+  Serial.print("Angle: ");
+  Serial.print(angle);
+  Serial.print("  Output: ");
+  Serial.println(output);
+
+  delay(5);
 }
+

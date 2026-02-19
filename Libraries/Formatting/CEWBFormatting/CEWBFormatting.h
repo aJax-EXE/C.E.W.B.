@@ -1,6 +1,5 @@
 #ifndef CEWBFORMATTING_H
 #define CEWBFORMATTING_H
-
 #include <Arduino.h>
 
 // Variables used by both the parsing and formatting functions

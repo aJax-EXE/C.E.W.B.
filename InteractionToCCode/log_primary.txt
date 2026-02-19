@@ -1,277 +1,564 @@
-0,tor=Motor=6
-0,Motor=6
-0,Motor=6
-0,Motor=6
-0,Motor=6
-0,Motor=6
-0,Motor=6
-0,Motor=6
-0,Motor=6
-0,Motor=6
-0,
-0,Motor=6
-0,Motor=6
-0,Motor=6
-0,Motor=6
-0,Motor=6
-0,Motor=6
-0,Motor=6
-0,Motor=6
-0,Motor=6
-0,Motor=6
-0,Motor=6
-0,Motor=6
-0,Motor=6
-0,Motor=6
-0,Motor=0
-0,Motor=0
-0,Motor=0
-0,Motor=0
-26,Motor=0
-129,Motor=0
-227,Motor=0
-330,Motor=0
-427,Motor=0
-530,Motor=0
-628,Motor=0
-731,Motor=0
-829,Motor=0
-932,Motor=0
-1030,Motor=0
-1128,Motor=0
-1231,Motor=0
-1329,Motor=0
-1431,Motor=0
-1530,Motor=0
-1632,Motor=0
-1730,Motor=0
-1832,Motor=0
-1931,Motor=0
-2033,Motor=0
-2132,Motor=0
-2234,Motor=0
-2332,Motor=0
-2434,Motor=0
-2533,Motor=0
-2635,Motor=12
-2734,Motor=12
-2836,Motor=12
-2934,Motor=12
-3037,Motor=12
-3135,Motor=12
-3238,Motor=12
-3336,Motor=12
-3438,Motor=12
-3537,Motor=12
-3639,Motor=12
-3737,Motor=12
-3836,Motor=12
-3938,Motor=12
-4036,Motor=12
-4139,Motor=12
-4237,Motor=24
-4339,Motor=24
-4438,Motor=24
-4540,Motor=24
-4638,Motor=24
-4741,Motor=24
-4839,Motor=24
-4941,Motor=24
-5040,Motor=24
-5142,Motor=67
-5240,Motor=67
-5343,Motor=67
-5441,Motor=67
-5543,Motor=67
-5642,Motor=67
-5744,Motor=67
-5842,Motor=67
-5945,Motor=67
-6043,Motor=67
-6146,Motor=67
-6244,Motor=67
-6342,Motor=67
-6444,Motor=67
-6543,Motor=43
-6645,Motor=43
-6744,Motor=43
-6846,Motor=43
-6944,Motor=43
-7046,Motor=43
-7145,Motor=43
-7247,Motor=43
-7350,Motor=43
-7448,Motor=43
-7546,Motor=43
-7649,Motor=1234
-7751,Motor=1234
-7849,Motor=1234
-7951,Motor=1234
-8050,Motor=1234
-8152,Motor=1234
-8250,Motor=1234
-8353,Motor=1234
-8451,Motor=1234
-8554,Motor=1931
-8652,Motor=1931
-8755,Motor=1931
-8853,Motor=1931
-8955,Motor=1931
-9053,Motor=1931
-9156,Motor=1931
-9254,Motor=1931
-9356,Motor=1931
-9455,Motor=1931
-9557,Motor=-11061
-9660,Motor=-11061
-9758,Motor=-11061
-9860,Motor=-11061
-9958,Motor=-11061
-10061,Motor=-11061
-10159,Motor=-11061
-10262,Motor=-11061
-10360,Motor=-11061
-10463,Motor=-21439
-10561,Motor=-21439
-10663,Motor=-21439
-10762,Motor=-21439
-10864,Motor=-21439
-10966,Motor=-21439
-11064,Motor=-21439
-11167,Motor=-21439
-11265,Motor=-21439
-11364,Motor=134
-11462,Motor=134
-11564,Motor=134
-11663,Motor=134
-11765,Motor=134
-11863,Motor=134
-11966,Motor=134
-12064,Motor=5
-12162,Motor=5
-12264,Motor=5
-12363,Motor=5
-12465,Motor=5
-12564,Motor=5
-12666,Motor=2
-12764,Motor=2
-12867,Motor=2
-12965,Motor=2
-13063,Motor=2
-13166,Motor=2
-13264,Motor=2
-13366,Motor=2
-13464,Motor=2
-13567,Motor=2
-13665,Motor=0
-13768,Motor=0
-13866,Motor=0
-13969,Motor=0
-14067,Motor=0
-14169,Motor=0
-14267,Motor=0
-14370,Motor=7
-14468,Motor=7
-14567,Motor=7
-14669,Motor=7
-14767,Motor=4
-14869,Motor=4
-14968,Motor=4
-15070,Motor=4
-15169,Motor=2
-15271,Motor=2
-15369,Motor=2
-15472,Motor=2
-15570,Motor=2
-15672,Motor=2
-15771,Motor=2
-15873,Motor=1
-15971,Motor=1
-16074,Motor=1
-16172,Motor=1
-16270,Motor=1
-16372,Motor=1
-16471,Motor=3
-16573,Motor=3
-16672,Motor=3
-16774,Motor=3
-16872,Motor=4
-16975,Motor=4
-17073,Motor=4
-17176,Motor=5
-17274,Motor=5
-17376,Motor=5
-17474,Motor=6
-17577,Motor=6
-17675,Motor=7
-17778,Motor=7
-18060,Motor=54
-18158,Motor=54
-18257,Motor=2
-18519,Motor=34
-18617,Motor=34
-18715,Motor=5
-18818,Motor=5
-18916,Motor=6
-19018,Motor=5
-19117,Motor=5
-19219,Motor=43
-19317,Motor=2
-19420,Motor=2
-19715,Motor=345
-19813,Motor=345
-19915,Motor=43
-20014,Motor=43
-20116,Motor=43
-20215,Motor=43
-20317,Motor=43
-20415,Motor=43
-20518,Motor=43
-20616,Motor=43
-20718,Motor=43
-20817,Motor=43
-20919,Motor=43
-21017,Motor=43
-21115,Motor=43
-21218,Motor=43
-21316,Motor=43
-21419,Motor=43
-21517,Motor=43
-21619,Motor=4
-21718,Motor=4
-21820,Motor=4
-21919,Motor=4
-22017,Motor=4
-22119,Motor=4
-22217,Motor=4
-22320,Motor=4
-22418,Motor=4
-22521,Motor=4
-22619,Motor=4
-22721,Motor=4
-22820,Motor=4
-22922,Motor=4
-23020,Motor=4
-23123,Motor=4
-23221,Motor=4
-23323,Motor=4
-23421,Motor=4
-23524,Motor=4
-23622,Motor=4
-23722,Motor=4
-23823,Motor=4
-23921,Motor=4
-24023,Motor=4
-24122,Motor=4
-24224,Motor=4
-24322,Motor=4
-24425,Motor=4
-24523,Motor=4
-24626,Motor=4
-24724,Motor=4
-24826,Motor=4
-24925,Motor=4
-25027,Motor=4
-25125,Motor=4
-25224,Motor=4
-25326,Motor=4
+0, deg -575 | Angle: -101.074 deg | Direction: CW
+0,Count: -575 | Angle: -101.074 deg | Direction: CW
+0,Count: -575 | Ançion: CW
+0,Count: -575 | Angle: -101.074 deg | Direction: CW
+0,Count: -575 | Angle: -101.074 deg | Direction: CW
+0,Count: -575 | AnçCount: 0 | Angle: 0.000 deg | Direction: CCW
+0,Count: 0 | Angle: 0.000 deg | Direction: CCW
+0,Count: 0 | Angle: 0.000 deg | Direction: CCW
+0,Count: 0 | Angle: 0.000 deg | Direction: CCW
+0,Count: 0 | Angle: 0.000 deg | Direction: CCW
+0,Count: 0 | Angle: 0.000 deg | Direction: CCW
+0,Count: 0 | Angle: 0.000 deg | Direction: CCW
+1,Count: 0 | Angle: 0.000 deg | Direction: CCW
+50,Count: 0 | Angle: 0.000 deg | Direction: CCW
+95,Count: 0 | Angle: 0.000 deg | Direction: CCW
+144,Count: 0 | Angle: 0.000 deg | Direction: CCW
+193,Count: 0 | Angle: 0.000 deg | Direction: CCW
+238,Count: 0 | Angle: 0.000 deg | Direction: CCW
+287,Count: 0 | Angle: 0.000 deg | Direction: CCW
+336,Count: 0 | Angle: 0.000 deg | Direction: CCW
+382,Count: 0 | Angle: 0.000 deg | Direction: CCW
+431,Count: 0 | Angle: 0.000 deg | Direction: CCW
+480,Count: 0 | Angle: 0.000 deg | Direction: CCW
+529,Count: 0 | Angle: 0.000 deg | Direction: CCW
+574,Count: 0 | Angle: 0.000 deg | Direction: CCW
+623,Count: 0 | Angle: 0.000 deg | Direction: CCW
+672,Count: 0 | Angle: 0.000 deg | Direction: CCW
+717,Count: 0 | Angle: 0.000 deg | Direction: CCW
+766,Count: 0 | Angle: 0.000 deg | Direction: CCW
+816,Count: 0 | Angle: 0.000 deg | Direction: CCW
+861,Count: 0 | Angle: 0.000 deg | Direction: CCW
+910,Count: 0 | Angle: 0.000 deg | Direction: CCW
+959,Count: 0 | Angle: 0.000 deg | Direction: CCW
+1004,Count: 0 | Angle: 0.000 deg | Direction: CCW
+1053,Count: 0 | Angle: 0.000 deg | Direction: CCW
+1103,Count: 0 | Angle: 0.000 deg | Direction: CCW
+1147,Count: 0 | Angle: 0.000 deg | Direction: CCW
+1197,Count: 0 | Angle: 0.000 deg | Direction: CCW
+1247,Count: 0 | Angle: 0.000 deg | Direction: CCW
+1295,Count: 0 | Angle: 0.000 deg | Direction: CCW
+1340,Count: 0 | Angle: 0.000 deg | Direction: CCW
+1389,Count: 0 | Angle: 0.000 deg | Direction: CCW
+1438,Count: 0 | Angle: 0.000 deg | Direction: CCW
+1483,Count: 0 | Angle: 0.000 deg | Direction: CCW
+1532,Count: 0 | Angle: 0.000 deg | Direction: CCW
+1582,Count: 0 | Angle: 0.000 deg | Direction: CCW
+1627,Count: 0 | Angle: 0.000 deg | Direction: CCW
+1676,Count: 0 | Angle: 0.000 deg | Direction: CCW
+1725,Count: 0 | Angle: 0.000 deg | Direction: CCW
+1770,Count: 0 | Angle: 0.000 deg | Direction: CCW
+1819,Count: 0 | Angle: 0.000 deg | Direction: CCW
+1868,Count: 0 | Angle: 0.000 deg | Direction: CCW
+1918,Count: 0 | Angle: 0.000 deg | Direction: CCW
+1962,Count: 0 | Angle: 0.000 deg | Direction: CCW
+2012,Count: 0 | Angle: 0.000 deg | Direction: CCW
+2061,Count: 0 | Angle: 0.000 deg | Direction: CCW
+2106,Count: 0 | Angle: 0.000 deg | Direction: CCW
+2155,Count: 0 | Angle: 0.000 deg | Direction: CCW
+2204,Count: 0 | Angle: 0.000 deg | Direction: CCW
+2249,Count: 0 | Angle: 0.000 deg | Direction: CCW
+2298,Count: 0 | Angle: 0.000 deg | Direction: CCW
+2347,Count: 0 | Angle: 0.000 deg | Direction: CCW
+2393,Count: 0 | Angle: 0.000 deg | Direction: CCW
+2442,Count: 0 | Angle: 0.000 deg | Direction: CCW
+2491,Count: 0 | Angle: 0.000 deg | Direction: CCW
+2540,Count: 0 | Angle: 0.000 deg | Direction: CCW
+2585,Count: 0 | Angle: 0.000 deg | Direction: CCW
+2634,Count: 0 | Angle: 0.000 deg | Direction: CCW
+2683,Count: 0 | Angle: 0.000 deg | Direction: CCW
+2728,Count: 0 | Angle: 0.000 deg | Direction: CCW
+2778,Count: 0 | Angle: 0.000 deg | Direction: CCW
+2827,Count: 0 | Angle: 0.000 deg | Direction: CCW
+2872,Count: 0 | Angle: 0.000 deg | Direction: CCW
+2921,Count: 0 | Angle: 0.000 deg | Direction: CCW
+2970,Count: 0 | Angle: 0.000 deg | Direction: CCW
+3015,Count: 0 | Angle: 0.000 deg | Direction: CCW
+3065,Count: 0 | Angle: 0.000 deg | Direction: CCW
+3113,Count: 0 | Angle: 0.000 deg | Direction: CCW
+3163,Count: 0 | Angle: 0.000 deg | Direction: CCW
+3208,Count: 0 | Angle: 0.000 deg | Direction: CCW
+3257,Count: 0 | Angle: 0.000 deg | Direction: CCW
+3306,Count: 0 | Angle: 0.000 deg | Direction: CCW
+3351,Count: 0 | Angle: 0.000 deg | Direction: CCW
+3400,Count: 0 | Angle: 0.000 deg | Direction: CCW
+3449,Count: 0 | Angle: 0.000 deg | Direction: CCW
+3495,Count: 0 | Angle: 0.000 deg | Direction: CCW
+3544,Count: 0 | Angle: 0.000 deg | Direction: CCW
+3593,Count: 0 | Angle: 0.000 deg | Direction: CCW
+3638,Count: 0 | Angle: 0.000 deg | Direction: CCW
+3687,Count: 0 | Angle: 0.000 deg | Direction: CCW
+3736,Count: 0 | Angle: 0.000 deg | Direction: CCW
+3785,Count: 0 | Angle: 0.000 deg | Direction: CCW
+3830,Count: 0 | Angle: 0.000 deg | Direction: CCW
+3879,Count: 0 | Angle: 0.000 deg | Direction: CCW
+3929,Count: 0 | Angle: 0.000 deg | Direction: CCW
+3974,Count: 0 | Angle: 0.000 deg | Direction: CCW
+4023,Count: 0 | Angle: 0.000 deg | Direction: CCW
+4072,Count: 0 | Angle: 0.000 deg | Direction: CCW
+4117,Count: 0 | Angle: 0.000 deg | Direction: CCW
+4166,Count: 0 | Angle: 0.000 deg | Direction: CCW
+4215,Count: 0 | Angle: 0.000 deg | Direction: CCW
+4260,Count: 0 | Angle: 0.000 deg | Direction: CCW
+4309,Count: 0 | Angle: 0.000 deg | Direction: CCW
+4359,Count: 0 | Angle: 0.000 deg | Direction: CCW
+4408,Count: 0 | Angle: 0.000 deg | Direction: CCW
+4453,Count: 0 | Angle: 0.000 deg | Direction: CCW
+4502,Count: 0 | Angle: 0.000 deg | Direction: CCW
+4551,Count: 0 | Angle: 0.000 deg | Direction: CCW
+4596,Count: 0 | Angle: 0.000 deg | Direction: CCW
+4645,Count: 0 | Angle: 0.000 deg | Direction: CCW
+4694,Count: 0 | Angle: 0.000 deg | Direction: CCW
+4740,Count: 0 | Angle: 0.000 deg | Direction: CCW
+4789,Count: 0 | Angle: 0.000 deg | Direction: CCW
+4838,Count: 0 | Angle: 0.000 deg | Direction: CCW
+4883,Count: 0 | Angle: 0.000 deg | Direction: CCW
+4932,Count: 0 | Angle: 0.000 deg | Direction: CCW
+4981,Count: 0 | Angle: 0.000 deg | Direction: CCW
+5026,Count: 0 | Angle: 0.000 deg | Direction: CCW
+5075,Count: 0 | Angle: 0.000 deg | Direction: CCW
+5125,Count: 0 | Angle: 0.000 deg | Direction: CCW
+5174,Count: 0 | Angle: 0.000 deg | Direction: CCW
+5219,Count: 0 | Angle: 0.000 deg | Direction: CCW
+5268,Count: 0 | Angle: 0.000 deg | Direction: CCW
+5317,Count: 0 | Angle: 0.000 deg | Direction: CCW
+5362,Count: 0 | Angle: 0.000 deg | Direction: CCW
+5411,Count: 0 | Angle: 0.000 deg | Direction: CCW
+5460,Count: 0 | Angle: 0.000 deg | Direction: CCW
+5505,Count: 0 | Angle: 0.000 deg | Direction: CCW
+5555,Count: 0 | Angle: 0.000 deg | Direction: CCW
+5604,Count: 0 | Angle: 0.000 deg | Direction: CCW
+5649,Count: 0 | Angle: 0.000 deg | Direction: CCW
+5698,Count: 0 | Angle: 0.000 deg | Direction: CCW
+5747,Count: 0 | Angle: 0.000 deg | Direction: CCW
+5796,Count: 0 | Angle: 0.000 deg | Direction: CCW
+5841,Count: 0 | Angle: 0.000 deg | Direction: CCW
+5890,Count: 0 | Angle: 0.000 deg | Direction: CCW
+5940,Count: 0 | Angle: 0.000 deg | Direction: CCW
+5985,Count: 0 | Angle: 0.000 deg | Direction: CCW
+6034,Count: 0 | Angle: 0.000 deg | Direction: CCW
+6083,Count: 0 | Angle: 0.000 deg | Direction: CCW
+6128,Count: 0 | Angle: 0.000 deg | Direction: CCW
+6177,Count: 0 | Angle: 0.000 deg | Direction: CCW
+6226,Count: 0 | Angle: 0.000 deg | Direction: CCW
+6271,Count: 0 | Angle: 0.000 deg | Direction: CCW
+6321,Count: 0 | Angle: 0.000 deg | Direction: CCW
+6370,Count: 0 | Angle: 0.000 deg | Direction: CCW
+6419,Count: 0 | Angle: 0.000 deg | Direction: CCW
+6464,Count: 0 | Angle: 0.000 deg | Direction: CCW
+6513,Count: 0 | Angle: 0.000 deg | Direction: CCW
+6562,Count: 0 | Angle: 0.000 deg | Direction: CCW
+6607,Count: 0 | Angle: 0.000 deg | Direction: CCW
+6656,Count: 0 | Angle: 0.000 deg | Direction: CCW
+6706,Count: 0 | Angle: 0.000 deg | Direction: CCW
+6751,Count: 0 | Angle: 0.000 deg | Direction: CCW
+6800,Count: 0 | Angle: 0.000 deg | Direction: CCW
+6849,Count: 0 | Angle: 0.000 deg | Direction: CCW
+6894,Count: 0 | Angle: 0.000 deg | Direction: CCW
+6943,Count: 0 | Angle: 0.000 deg | Direction: CCW
+6992,Count: 0 | Angle: 0.000 deg | Direction: CCW
+7041,Count: 0 | Angle: 0.000 deg | Direction: CCW
+7088,Count: 0 | Angle: 0.000 deg | Direction: CCW
+7136,Count: 0 | Angle: 0.000 deg | Direction: CCW
+7185,Count: 0 | Angle: 0.000 deg | Direction: CCW
+7230,Count: 0 | Angle: 0.000 deg | Direction: CCW
+7279,Count: 0 | Angle: 0.000 deg | Direction: CCW
+7328,Count: 0 | Angle: 0.000 deg | Direction: CCW
+7373,Count: 0 | Angle: 0.000 deg | Direction: CCW
+7422,Count: 0 | Angle: 0.000 deg | Direction: CCW
+7471,Count: 0 | Angle: 0.000 deg | Direction: CCW
+7517,Count: 0 | Angle: 0.000 deg | Direction: CCW
+7566,Count: 0 | Angle: 0.000 deg | Direction: CCW
+7615,Count: 0 | Angle: 0.000 deg | Direction: CCW
+7664,Count: 0 | Angle: 0.000 deg | Direction: CCW
+7709,Count: 0 | Angle: 0.000 deg | Direction: CCW
+7758,Count: 0 | Angle: 0.000 deg | Direction: CCW
+7807,Count: 0 | Angle: 0.000 deg | Direction: CCW
+7852,Count: 0 | Angle: 0.000 deg | Direction: CCW
+7902,Count: 0 | Angle: 0.000 deg | Direction: CCW
+7951,Count: 0 | Angle: 0.000 deg | Direction: CCW
+7996,Count: 0 | Angle: 0.000 deg | Direction: CCW
+8045,Count: 0 | Angle: 0.000 deg | Direction: CCW
+8094,Count: 0 | Angle: 0.000 deg | Direction: CCW
+8139,Count: 0 | Angle: 0.000 deg | Direction: CCW
+8188,Count: 0 | Angle: 0.000 deg | Direction: CCW
+8237,Count: 0 | Angle: 0.000 deg | Direction: CCW
+8287,Count: 0 | Angle: 0.000 deg | Direction: CCW
+8332,Count: 0 | Angle: 0.000 deg | Direction: CCW
+8381,Count: 0 | Angle: 0.000 deg | Direction: CCW
+8430,Count: 13 | Angle: 2.285 deg | Direction: CW
+8475,Count: 25 | Angle: 4.395 deg | Direction: CW
+8524,Count: 37 | Angle: 6.504 deg | Direction: CW
+8573,Count: 62 | Angle: 10.898 deg | Direction: CW
+8623,Count: 90 | Angle: 15.820 deg | Direction: CW
+8672,Count: 128 | Angle: 22.500 deg | Direction: CW
+8721,Count: 163 | Angle: 28.652 deg | Direction: CW
+8770,Count: 197 | Angle: 34.629 deg | Direction: CW
+8823,Count: 250 | Angle: 43.945 deg | Direction: CW
+8872,Count: 281 | Angle: 49.395 deg | Direction: CW
+8922,Count: 299 | Angle: 52.559 deg | Direction: CW
+8971,Count: 320 | Angle: 56.250 deg | Direction: CW
+9020,Count: 337 | Angle: 59.238 deg | Direction: CW
+9073,Count: 351 | Angle: 61.699 deg | Direction: CW
+9122,Count: 375 | Angle: 65.918 deg | Direction: CW
+9171,Count: 395 | Angle: 69.434 deg | Direction: CW
+9220,Count: 409 | Angle: 71.895 deg | Direction: CW
+9270,Count: 422 | Angle: 74.180 deg | Direction: CW
+9323,Count: 436 | Angle: 76.641 deg | Direction: CW
+9372,Count: 456 | Angle: 80.156 deg | Direction: CW
+9421,Count: 484 | Angle: 85.078 deg | Direction: CW
+9470,Count: 512 | Angle: 90.000 deg | Direction: CW
+9519,Count: 527 | Angle: 92.637 deg | Direction: CW
+9573,Count: 537 | Angle: 94.395 deg | Direction: CW
+9622,Count: 546 | Angle: 95.977 deg | Direction: CW
+9671,Count: 559 | Angle: 98.262 deg | Direction: CW
+9724,Count: 580 | Angle: 101.953 deg | Direction: CW
+9773,Count: 605 | Angle: 106.348 deg | Direction: CW
+9823,Count: 624 | Angle: 109.688 deg | Direction: CW
+9876,Count: 636 | Angle: 111.797 deg | Direction: CW
+9925,Count: 643 | Angle: 113.027 deg | Direction: CW
+9978,Count: 650 | Angle: 114.258 deg | Direction: CW
+10027,Count: 659 | Angle: 115.840 deg | Direction: CW
+10081,Count: 663 | Angle: 116.543 deg | Direction: CW
+10130,Count: 666 | Angle: 117.070 deg | Direction: CW
+10183,Count: 667 | Angle: 117.246 deg | Direction: CW
+10232,Count: 668 | Angle: 117.422 deg | Direction: CW
+10285,Count: 672 | Angle: 118.125 deg | Direction: CW
+10335,Count: 687 | Angle: 120.762 deg | Direction: CW
+10384,Count: 715 | Angle: 125.684 deg | Direction: CW
+10437,Count: 744 | Angle: 130.781 deg | Direction: CW
+10486,Count: 762 | Angle: 133.945 deg | Direction: CW
+10539,Count: 772 | Angle: 135.703 deg | Direction: CW
+10588,Count: 781 | Angle: 137.285 deg | Direction: CW
+10642,Count: 789 | Angle: 138.691 deg | Direction: CW
+10691,Count: 792 | Angle: 139.219 deg | Direction: CW
+10744,Count: 793 | Angle: 139.395 deg | Direction: CW
+10793,Count: 791 | Angle: 139.043 deg | Direction: CCW
+10847,Count: 782 | Angle: 137.461 deg | Direction: CCW
+10900,Count: 765 | Angle: 134.473 deg | Direction: CCW
+10949,Count: 735 | Angle: 129.199 deg | Direction: CCW
+11002,Count: 695 | Angle: 122.168 deg | Direction: CCW
+11055,Count: 649 | Angle: 114.082 deg | Direction: CCW
+11109,Count: 612 | Angle: 107.578 deg | Direction: CCW
+11158,Count: 586 | Angle: 103.008 deg | Direction: CCW
+11211,Count: 560 | Angle: 98.438 deg | Direction: CCW
+11260,Count: 538 | Angle: 94.570 deg | Direction: CCW
+11313,Count: 515 | Angle: 90.527 deg | Direction: CCW
+11363,Count: 480 | Angle: 84.375 deg | Direction: CCW
+11416,Count: 421 | Angle: 74.004 deg | Direction: CCW
+11465,Count: 374 | Angle: 65.742 deg | Direction: CCW
+11514,Count: 335 | Angle: 58.887 deg | Direction: CCW
+11567,Count: 295 | Angle: 51.855 deg | Direction: CCW
+11617,Count: 261 | Angle: 45.879 deg | Direction: CCW
+11670,Count: 237 | Angle: 41.660 deg | Direction: CCW
+11719,Count: 206 | Angle: 36.211 deg | Direction: CCW
+11772,Count: 154 | Angle: 27.070 deg | Direction: CCW
+11821,Count: 116 | Angle: 20.391 deg | Direction: CCW
+11871,Count: 92 | Angle: 16.172 deg | Direction: CCW
+11924,Count: 70 | Angle: 12.305 deg | Direction: CCW
+11969,Count: 52 | Angle: 9.141 deg | Direction: CCW
+12018,Count: 34 | Angle: 5.977 deg | Direction: CCW
+12067,Count: 4 | Angle: 0.703 deg | Direction: CCW
+12120,Count: -46 | Angle: -8.086 deg | Direction: CCW
+12174,Count: -114 | Angle: -20.039 deg | Direction: CCW
+12227,Count: -148 | Angle: -26.016 deg | Direction: CCW
+12276,Count: -188 | Angle: -33.047 deg | Direction: CCW
+12329,Count: -214 | Angle: -37.617 deg | Direction: CCW
+12383,Count: -240 | Angle: -42.187 deg | Direction: CCW
+12436,Count: -258 | Angle: -45.352 deg | Direction: CCW
+12489,Count: -280 | Angle: -49.219 deg | Direction: CCW
+12542,Count: -292 | Angle: -51.328 deg | Direction: CCW
+12595,Count: -292 | Angle: -51.328 deg | Direction: CCW
+12649,Count: -293 | Angle: -51.504 deg | Direction: CCW
+12702,Count: -297 | Angle: -52.207 deg | Direction: CCW
+12755,Count: -314 | Angle: -55.195 deg | Direction: CCW
+12808,Count: -343 | Angle: -60.293 deg | Direction: CCW
+12862,Count: -361 | Angle: -63.457 deg | Direction: CCW
+12915,Count: -375 | Angle: -65.918 deg | Direction: CCW
+12968,Count: -385 | Angle: -67.676 deg | Direction: CCW
+13021,Count: -392 | Angle: -68.906 deg | Direction: CCW
+13075,Count: -401 | Angle: -70.488 deg | Direction: CCW
+13128,Count: -413 | Angle: -72.598 deg | Direction: CCW
+13181,Count: -423 | Angle: -74.355 deg | Direction: CCW
+13234,Count: -430 | Angle: -75.586 deg | Direction: CCW
+13288,Count: -439 | Angle: -77.168 deg | Direction: CCW
+13341,Count: -441 | Angle: -77.520 deg | Direction: CCW
+13390,Count: -440 | Angle: -77.344 deg | Direction: CW
+13444,Count: -442 | Angle: -77.695 deg | Direction: CCW
+13497,Count: -443 | Angle: -77.871 deg | Direction: CCW
+13550,Count: -441 | Angle: -77.520 deg | Direction: CW
+13603,Count: -432 | Angle: -75.938 deg | Direction: CW
+13653,Count: -394 | Angle: -69.258 deg | Direction: CW
+13706,Count: -349 | Angle: -61.348 deg | Direction: CW
+13759,Count: -315 | Angle: -55.371 deg | Direction: CW
+13812,Count: -258 | Angle: -45.352 deg | Direction: CW
+13861,Count: -239 | Angle: -42.012 deg | Direction: CW
+13914,Count: -227 | Angle: -39.902 deg | Direction: CW
+13968,Count: -213 | Angle: -37.441 deg | Direction: CW
+14017,Count: -201 | Angle: -35.332 deg | Direction: CW
+14070,Count: -194 | Angle: -34.102 deg | Direction: CW
+14123,Count: -181 | Angle: -31.816 deg | Direction: CW
+14177,Count: -165 | Angle: -29.004 deg | Direction: CW
+14226,Count: -147 | Angle: -25.840 deg | Direction: CW
+14279,Count: -125 | Angle: -21.973 deg | Direction: CW
+14332,Count: -101 | Angle: -17.754 deg | Direction: CW
+14381,Count: -79 | Angle: -13.887 deg | Direction: CW
+14431,Count: -45 | Angle: -7.910 deg | Direction: CW
+14480,Count: 17 | Angle: 2.988 deg | Direction: CW
+14529,Count: 43 | Angle: 7.559 deg | Direction: CW
+14574,Count: 54 | Angle: 9.492 deg | Direction: CW
+14623,Count: 58 | Angle: 10.195 deg | Direction: CW
+14672,Count: 74 | Angle: 13.008 deg | Direction: CW
+14721,Count: 100 | Angle: 17.578 deg | Direction: CW
+14775,Count: 137 | Angle: 24.082 deg | Direction: CW
+14824,Count: 169 | Angle: 29.707 deg | Direction: CW
+14873,Count: 211 | Angle: 37.090 deg | Direction: CW
+14922,Count: 265 | Angle: 46.582 deg | Direction: CW
+14971,Count: 291 | Angle: 51.152 deg | Direction: CW
+15024,Count: 296 | Angle: 52.031 deg | Direction: CW
+15073,Count: 303 | Angle: 53.262 deg | Direction: CW
+15123,Count: 309 | Angle: 54.316 deg | Direction: CW
+15172,Count: 318 | Angle: 55.898 deg | Direction: CW
+15221,Count: 334 | Angle: 58.711 deg | Direction: CW
+15274,Count: 354 | Angle: 62.227 deg | Direction: CW
+15323,Count: 377 | Angle: 66.270 deg | Direction: CW
+15373,Count: 390 | Angle: 68.555 deg | Direction: CW
+15422,Count: 399 | Angle: 70.137 deg | Direction: CW
+15471,Count: 405 | Angle: 71.191 deg | Direction: CW
+15524,Count: 413 | Angle: 72.598 deg | Direction: CW
+15573,Count: 420 | Angle: 73.828 deg | Direction: CW
+15623,Count: 428 | Angle: 75.234 deg | Direction: CW
+15672,Count: 440 | Angle: 77.344 deg | Direction: CW
+15721,Count: 466 | Angle: 81.914 deg | Direction: CW
+15774,Count: 507 | Angle: 89.121 deg | Direction: CW
+15823,Count: 537 | Angle: 94.395 deg | Direction: CW
+15872,Count: 556 | Angle: 97.734 deg | Direction: CW
+15925,Count: 570 | Angle: 100.195 deg | Direction: CW
+15975,Count: 582 | Angle: 102.305 deg | Direction: CW
+16024,Count: 602 | Angle: 105.820 deg | Direction: CW
+16077,Count: 634 | Angle: 111.445 deg | Direction: CW
+16126,Count: 665 | Angle: 116.895 deg | Direction: CW
+16179,Count: 692 | Angle: 121.641 deg | Direction: CW
+16229,Count: 732 | Angle: 128.672 deg | Direction: CW
+16282,Count: 775 | Angle: 136.230 deg | Direction: CW
+16331,Count: 783 | Angle: 137.637 deg | Direction: CW
+16384,Count: 783 | Angle: 137.637 deg | Direction: CW
+16433,Count: 775 | Angle: 136.230 deg | Direction: CCW
+16487,Count: 769 | Angle: 135.176 deg | Direction: CCW
+16540,Count: 744 | Angle: 130.781 deg | Direction: CCW
+16589,Count: 719 | Angle: 126.387 deg | Direction: CCW
+16642,Count: 686 | Angle: 120.586 deg | Direction: CCW
+16695,Count: 646 | Angle: 113.555 deg | Direction: CCW
+16749,Count: 613 | Angle: 107.754 deg | Direction: CCW
+16798,Count: 576 | Angle: 101.250 deg | Direction: CCW
+16851,Count: 541 | Angle: 95.098 deg | Direction: CCW
+16900,Count: 511 | Angle: 89.824 deg | Direction: CCW
+16954,Count: 477 | Angle: 83.848 deg | Direction: CCW
+17003,Count: 423 | Angle: 74.355 deg | Direction: CCW
+17056,Count: 385 | Angle: 67.676 deg | Direction: CCW
+17105,Count: 357 | Angle: 62.754 deg | Direction: CCW
+17154,Count: 325 | Angle: 57.129 deg | Direction: CCW
+17208,Count: 301 | Angle: 52.910 deg | Direction: CCW
+17257,Count: 268 | Angle: 47.109 deg | Direction: CCW
+17310,Count: 228 | Angle: 40.078 deg | Direction: CCW
+17359,Count: 160 | Angle: 28.125 deg | Direction: CCW
+17408,Count: 98 | Angle: 17.227 deg | Direction: CCW
+17457,Count: 54 | Angle: 9.492 deg | Direction: CCW
+17507,Count: 24 | Angle: 4.219 deg | Direction: CCW
+17556,Count: 7 | Angle: 1.230 deg | Direction: CCW
+17609,Count: -11 | Angle: -1.934 deg | Direction: CCW
+17658,Count: -44 | Angle: -7.734 deg | Direction: CCW
+17711,Count: -94 | Angle: -16.523 deg | Direction: CCW
+17765,Count: -133 | Angle: -23.379 deg | Direction: CCW
+17818,Count: -164 | Angle: -28.828 deg | Direction: CCW
+17871,Count: -192 | Angle: -33.750 deg | Direction: CCW
+17924,Count: -221 | Angle: -38.848 deg | Direction: CCW
+17973,Count: -249 | Angle: -43.770 deg | Direction: CCW
+18027,Count: -264 | Angle: -46.406 deg | Direction: CCW
+18080,Count: -285 | Angle: -50.098 deg | Direction: CCW
+18133,Count: -305 | Angle: -53.613 deg | Direction: CCW
+18186,Count: -341 | Angle: -59.941 deg | Direction: CCW
+18240,Count: -367 | Angle: -64.512 deg | Direction: CCW
+18293,Count: -393 | Angle: -69.082 deg | Direction: CCW
+18346,Count: -404 | Angle: -71.016 deg | Direction: CCW
+18399,Count: -404 | Angle: -71.016 deg | Direction: CCW
+18453,Count: -404 | Angle: -71.016 deg | Direction: CCW
+18506,Count: -401 | Angle: -70.488 deg | Direction: CW
+18559,Count: -393 | Angle: -69.082 deg | Direction: CW
+18608,Count: -372 | Angle: -65.391 deg | Direction: CW
+18662,Count: -334 | Angle: -58.711 deg | Direction: CW
+18715,Count: -286 | Angle: -50.273 deg | Direction: CW
+18764,Count: -235 | Angle: -41.309 deg | Direction: CW
+18817,Count: -197 | Angle: -34.629 deg | Direction: CW
+18870,Count: -171 | Angle: -30.059 deg | Direction: CW
+18924,Count: -148 | Angle: -26.016 deg | Direction: CW
+18973,Count: -120 | Angle: -21.094 deg | Direction: CW
+19026,Count: -92 | Angle: -16.172 deg | Direction: CW
+19075,Count: -30 | Angle: -5.273 deg | Direction: CW
+19125,Count: 61 | Angle: 10.723 deg | Direction: CW
+19173,Count: 106 | Angle: 18.633 deg | Direction: CW
+19223,Count: 147 | Angle: 25.840 deg | Direction: CW
+19272,Count: 176 | Angle: 30.937 deg | Direction: CW
+19325,Count: 254 | Angle: 44.648 deg | Direction: CW
+19374,Count: 330 | Angle: 58.008 deg | Direction: CW
+19423,Count: 386 | Angle: 67.852 deg | Direction: CW
+19473,Count: 435 | Angle: 76.465 deg | Direction: CW
+19522,Count: 524 | Angle: 92.109 deg | Direction: CW
+19575,Count: 595 | Angle: 104.590 deg | Direction: CW
+19624,Count: 639 | Angle: 112.324 deg | Direction: CW
+19677,Count: 664 | Angle: 116.719 deg | Direction: CW
+19726,Count: 678 | Angle: 119.180 deg | Direction: CW
+19780,Count: 695 | Angle: 122.168 deg | Direction: CW
+19829,Count: 717 | Angle: 126.035 deg | Direction: CW
+19882,Count: 743 | Angle: 130.605 deg | Direction: CW
+19931,Count: 758 | Angle: 133.242 deg | Direction: CW
+19985,Count: 767 | Angle: 134.824 deg | Direction: CW
+20034,Count: 771 | Angle: 135.527 deg | Direction: CW
+20083,Count: 775 | Angle: 136.230 deg | Direction: CW
+20136,Count: 777 | Angle: 136.582 deg | Direction: CW
+20185,Count: 780 | Angle: 137.109 deg | Direction: CW
+20238,Count: 783 | Angle: 137.637 deg | Direction: CW
+20288,Count: 787 | Angle: 138.340 deg | Direction: CW
+20341,Count: 791 | Angle: 139.043 deg | Direction: CW
+20390,Count: 797 | Angle: 140.098 deg | Direction: CW
+20443,Count: 804 | Angle: 141.328 deg | Direction: CW
+20492,Count: 812 | Angle: 142.734 deg | Direction: CW
+20542,Count: 821 | Angle: 144.316 deg | Direction: CW
+20595,Count: 831 | Angle: 146.074 deg | Direction: CW
+20644,Count: 840 | Angle: 147.656 deg | Direction: CW
+20697,Count: 848 | Angle: 149.063 deg | Direction: CW
+20746,Count: 850 | Angle: 149.414 deg | Direction: CW
+20800,Count: 844 | Angle: 148.359 deg | Direction: CCW
+20853,Count: 833 | Angle: 146.426 deg | Direction: CCW
+20902,Count: 806 | Angle: 141.680 deg | Direction: CCW
+20955,Count: 780 | Angle: 137.109 deg | Direction: CCW
+21008,Count: 764 | Angle: 134.297 deg | Direction: CCW
+21062,Count: 751 | Angle: 132.012 deg | Direction: CCW
+21111,Count: 708 | Angle: 124.453 deg | Direction: CCW
+21164,Count: 618 | Angle: 108.633 deg | Direction: CCW
+21213,Count: 559 | Angle: 98.262 deg | Direction: CCW
+21267,Count: 517 | Angle: 90.879 deg | Direction: CCW
+21316,Count: 473 | Angle: 83.145 deg | Direction: CCW
+21369,Count: 395 | Angle: 69.434 deg | Direction: CCW
+21418,Count: 349 | Angle: 61.348 deg | Direction: CCW
+21471,Count: 307 | Angle: 53.965 deg | Direction: CCW
+21520,Count: 279 | Angle: 49.043 deg | Direction: CCW
+21574,Count: 253 | Angle: 44.473 deg | Direction: CCW
+21623,Count: 203 | Angle: 35.684 deg | Direction: CCW
+21673,Count: 93 | Angle: 16.348 deg | Direction: CCW
+21722,Count: 27 | Angle: 4.746 deg | Direction: CCW
+21770,Count: 9 | Angle: 1.582 deg | Direction: CCW
+21820,Count: -11 | Angle: -1.934 deg | Direction: CCW
+21873,Count: -48 | Angle: -8.437 deg | Direction: CCW
+21926,Count: -114 | Angle: -20.039 deg | Direction: CCW
+21979,Count: -176 | Angle: -30.937 deg | Direction: CCW
+22033,Count: -227 | Angle: -39.902 deg | Direction: CCW
+22086,Count: -259 | Angle: -45.527 deg | Direction: CCW
+22139,Count: -291 | Angle: -51.152 deg | Direction: CCW
+22192,Count: -339 | Angle: -59.590 deg | Direction: CCW
+22245,Count: -368 | Angle: -64.688 deg | Direction: CCW
+22299,Count: -387 | Angle: -68.027 deg | Direction: CCW
+22348,Count: -399 | Angle: -70.137 deg | Direction: CCW
+22401,Count: -408 | Angle: -71.719 deg | Direction: CCW
+22454,Count: -413 | Angle: -72.598 deg | Direction: CCW
+22508,Count: -413 | Angle: -72.598 deg | Direction: CCW
+22561,Count: -410 | Angle: -72.070 deg | Direction: CW
+22614,Count: -408 | Angle: -71.719 deg | Direction: CCW
+22667,Count: -406 | Angle: -71.367 deg | Direction: CW
+22716,Count: -399 | Angle: -70.137 deg | Direction: CW
+22770,Count: -378 | Angle: -66.445 deg | Direction: CW
+22823,Count: -347 | Angle: -60.996 deg | Direction: CW
+22876,Count: -299 | Angle: -52.559 deg | Direction: CW
+22925,Count: -170 | Angle: -29.883 deg | Direction: CW
+22979,Count: -128 | Angle: -22.500 deg | Direction: CW
+23028,Count: -95 | Angle: -16.699 deg | Direction: CW
+23081,Count: -43 | Angle: -7.559 deg | Direction: CW
+23126,Count: 44 | Angle: 7.734 deg | Direction: CW
+23175,Count: 81 | Angle: 14.238 deg | Direction: CW
+23225,Count: 132 | Angle: 23.203 deg | Direction: CW
+23278,Count: 159 | Angle: 27.949 deg | Direction: CW
+23327,Count: 159 | Angle: 27.949 deg | Direction: CW
+23376,Count: 159 | Angle: 27.949 deg | Direction: CW
+23425,Count: 167 | Angle: 29.355 deg | Direction: CW
+23475,Count: 214 | Angle: 37.617 deg | Direction: CW
+23528,Count: 262 | Angle: 46.055 deg | Direction: CW
+23577,Count: 293 | Angle: 51.504 deg | Direction: CW
+23626,Count: 303 | Angle: 53.262 deg | Direction: CCW
+23679,Count: 296 | Angle: 52.031 deg | Direction: CCW
+23728,Count: 297 | Angle: 52.207 deg | Direction: CW
+23777,Count: 297 | Angle: 52.207 deg | Direction: CW
+23826,Count: 297 | Angle: 52.207 deg | Direction: CW
+23880,Count: 297 | Angle: 52.207 deg | Direction: CW
+23929,Count: 297 | Angle: 52.207 deg | Direction: CW
+23978,Count: 297 | Angle: 52.207 deg | Direction: CW
+24027,Count: 297 | Angle: 52.207 deg | Direction: CW
+24076,Count: 297 | Angle: 52.207 deg | Direction: CW
+24130,Count: 297 | Angle: 52.207 deg | Direction: CW
+24179,Count: 297 | Angle: 52.207 deg | Direction: CW
+24228,Count: 297 | Angle: 52.207 deg | Direction: CW
+24277,Count: 297 | Angle: 52.207 deg | Direction: CW
+24326,Count: 297 | Angle: 52.207 deg | Direction: CW
+24379,Count: 297 | Angle: 52.207 deg | Direction: CW
+24429,Count: 297 | Angle: 52.207 deg | Direction: CW
+24478,Count: 297 | Angle: 52.207 deg | Direction: CW
+24527,Count: 297 | Angle: 52.207 deg | Direction: CW
+24576,Count: 297 | Angle: 52.207 deg | Direction: CW
+24629,Count: 297 | Angle: 52.207 deg | Direction: CW
+24678,Count: 297 | Angle: 52.207 deg | Direction: CW
+24728,Count: 297 | Angle: 52.207 deg | Direction: CW
+24777,Count: 297 | Angle: 52.207 deg | Direction: CW
+24826,Count: 297 | Angle: 52.207 deg | Direction: CW
+24879,Count: 297 | Angle: 52.207 deg | Direction: CW
+24928,Count: 297 | Angle: 52.207 deg | Direction: CW
+24977,Count: 297 | Angle: 52.207 deg | Direction: CW
+25027,Count: 297 | Angle: 52.207 deg | Direction: CW
+25076,Count: 297 | Angle: 52.207 deg | Direction: CW
+25129,Count: 297 | Angle: 52.207 deg | Direction: CW
+25178,Count: 297 | Angle: 52.207 deg | Direction: CW
+25227,Count: 297 | Angle: 52.207 deg | Direction: CW
+25276,Count: 297 | Angle: 52.207 deg | Direction: CW
+25326,Count: 297 | Angle: 52.207 deg | Direction: CW
+25379,Count: 297 | Angle: 52.207 deg | Direction: CW
+25428,Count: 297 | Angle: 52.207 deg | Direction: CW
+25477,Count: 297 | Angle: 52.207 deg | Direction: CW
+25526,Count: 297 | Angle: 52.207 deg | Direction: CW
+25575,Count: 297 | Angle: 52.207 deg | Direction: CW
+25629,Count: 297 | Angle: 52.207 deg | Direction: CW
+25678,Count: 297 | Angle: 52.207 deg | Direction: CW
+25727,Count: 297 | Angle: 52.207 deg | Direction: CW
+25776,Count: 297 | Angle: 52.207 deg | Direction: CW
+25825,Count: 297 | Angle: 52.207 deg | Direction: CW
+25879,Count: 297 | Angle: 52.207 deg | Direction: CW
+25928,Count: 297 | Angle: 52.207 deg | Direction: CW
+25977,Count: 297 | Angle: 52.207 deg | Direction: CW
+26026,Count: 297 | Angle: 52.207 deg | Direction: CW
+26075,Count: 297 | Angle: 52.207 deg | Direction: CW
+26128,Count: 297 | Angle: 52.207 deg | Direction: CW
+26178,Count: 297 | Angle: 52.207 deg | Direction: CW
+26227,Count: 297 | Angle: 52.207 deg | Direction: CW
+26276,Count: 297 | Angle: 52.207 deg | Direction: CW
+26325,Count: 297 | Angle: 52.207 deg | Direction: CW
+26378,Count: 297 | Angle: 52.207 deg | Direction: CW
+26427,Count: 297 | Angle: 52.207 deg | Direction: CW
+26477,Count: 297 | Angle: 52.207 deg | Direction: CW
+26526,Count: 297 | Angle: 52.207 deg | Direction: CW
+26575,Count: 297 | Angle: 52.207 deg | Direction: CW
+26628,Count: 297 | Angle: 52.207 deg | Direction: CW
+26677,Count: 297 | Angle: 52.207 deg | Direction: CW
+26726,Count: 297 | Angle: 52.207 deg | Direction: CW
+26776,Count: 297 | Angle: 52.207 deg | Direction: CW
+26825,Count: 297 | Angle: 52.207 deg | Direction: CW
+26878,Count: 297 | Angle: 52.207 deg | Direction: CW
+26927,Count: 297 | Angle: 52.207 deg | Direction: CW
+26976,Count: 297 | Angle: 52.207 deg | Direction: CW
+27025,Count: 297 | Angle: 52.207 deg | Direction: CW
+27075,Count: 297 | Angle: 52.207 deg | Direction: CW
+27128,Count: 297 | Angle: 52.207 deg | Direction: CW
+27177,Count: 297 | Angle: 52.207 deg | Direction: CW
+27226,Count: 297 | Angle: 52.207 deg | Direction: CW
+27275,Count: 297 | Angle: 52.207 deg | Direction: CW
+27324,Count: 297 | Angle: 52.207 deg | Direction: CW
+27378,Count: 297 | Angle: 52.207 deg | Direction: CW
+27427,Count: 297 | Angle: 52.207 deg | Direction: CW
+27476,Count: 297 | Angle: 52.207 deg | Direction: CW
+27525,Count: 297 | Angle: 52.207 deg | Direction: CW

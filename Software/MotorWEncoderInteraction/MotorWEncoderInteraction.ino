@@ -3,7 +3,7 @@
 #define ENC_B 3
 
 #define IN1 9   // PWM pin
-#define IN2 8
+#define IN2 10
 
 // encoder resolution AFTER quadrature
 // example: 600 CPR encoder → 2400 counts

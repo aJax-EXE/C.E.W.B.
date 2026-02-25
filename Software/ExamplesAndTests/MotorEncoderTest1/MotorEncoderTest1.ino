@@ -1,97 +1,85 @@
-// ================= ENCODER =================
-const int ENC_A = 2;   // CLK
-const int ENC_B = 3;   // DT
+#define ENC_A 2
+#define ENC_B 3
+
+#define IN1 9
+#define IN2 8
 
 volatile long encoderCount = 0;
-volatile int encoderDirection = 0;
-
-// Store last encoder state (2-bit)
 volatile uint8_t lastState = 0;
 
-// Quadrature lookup table
-// Index = (lastState << 2) | currentState
-// Value = +1, -1, or 0
-const int8_t quadTable[16] = {
-  0, -1, +1,  0,
- +1,  0,  0, -1,
- -1,  0,  0, +1,
-  0, +1, -1,  0
-};
 
+// ----- Encoder ISR -----
 void encoderISR() {
+
   uint8_t currentState =
-    (digitalRead(ENC_A) << 1) | digitalRead(ENC_B);
+      (digitalRead(ENC_A) << 1) | digitalRead(ENC_B);
 
-  uint8_t index = (lastState << 2) | currentState;
-  int8_t delta = quadTable[index];
+  uint8_t transition = (lastState << 2) | currentState;
 
-  if (delta != 0) {
-    encoderCount += delta;
-    encoderDirection = (delta > 0) ? 1 : -1;
+  switch (transition) {
+    case 0b0001:
+    case 0b0111:
+    case 0b1110:
+    case 0b1000:
+      encoderCount++;
+      break;
+
+    case 0b0010:
+    case 0b0100:
+    case 0b1101:
+    case 0b1011:
+      encoderCount--;
+      break;
+
+    default:
+      break;  // ignore invalid transitions (noise)
   }
 
   lastState = currentState;
 }
 
-// ================= MOTOR =================
-const int IN1 = 9;   // PWM-capable
-const int IN2 = 10;  // PWM-capable
 
-// speed: -255 to +255
-void setMotor(int speed) {
-  speed = constrain(speed, -255, 255);
-
-  if (speed > 0) {
-    analogWrite(IN1, speed);
-    digitalWrite(IN2, LOW);
-  }
-  else if (speed < 0) {
-    digitalWrite(IN1, LOW);
-    analogWrite(IN2, -speed);
-  }
-  else {
-    digitalWrite(IN1, LOW);
-    digitalWrite(IN2, LOW);
-  }
-}
-
-// ================= SETUP =================
 void setup() {
-  // Encoder
+  Serial.begin(115200);
+
   pinMode(ENC_A, INPUT_PULLUP);
   pinMode(ENC_B, INPUT_PULLUP);
 
-  lastState =
-    (digitalRead(ENC_A) << 1) | digitalRead(ENC_B);
-
-  attachInterrupt(digitalPinToInterrupt(ENC_A), encoderISR, CHANGE);
-  attachInterrupt(digitalPinToInterrupt(ENC_B), encoderISR, CHANGE);
-
-  // Motor
   pinMode(IN1, OUTPUT);
   pinMode(IN2, OUTPUT);
 
-  Serial.begin(9600);
+  // Attach interrupts
+  attachInterrupt(digitalPinToInterrupt(ENC_A), encoderISR, CHANGE);
+
+  lastState = (digitalRead(ENC_A) << 1) | digitalRead(ENC_B);
+
+
+  // Spin motor forward
+  analogWrite(IN1, 150);
+  digitalWrite(IN2, LOW);
 }
 
-// ================= LOOP =================
 void loop() {
-  // Run motor (change sign to reverse)
-  setMotor(150);
 
-  // Read encoder values safely (real-time)
-  long count;
-  int dir;
+  static long lastCount = 0;
+  static unsigned long lastTime = 0;
 
-  noInterrupts();
-  count = encoderCount;
-  dir = encoderDirection;
-  interrupts();
+  if (millis() - lastTime >= 100) {
+    unsigned long now = millis();
+    long currentCount;
 
-  Serial.print("Count: ");
-  Serial.print(count);
-  Serial.print(" | Direction: ");
-  Serial.println(dir == 1 ? "CW" : "CCW");
+    noInterrupts();
+    currentCount = encoderCount;
+    interrupts();
 
-  delay(100);
+    long delta = currentCount - lastCount;
+
+    float rpm = (delta * 600.0) / COUNTS_PER_REV;
+
+    Serial.println(rpm);
+
+    lastCount = currentCount;
+    lastTime = now;
+  }
 }
+

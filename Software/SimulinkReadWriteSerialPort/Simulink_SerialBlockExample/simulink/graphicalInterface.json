@@ -1,0 +1,27 @@
+{
+    "GraphicalInterface":{
+        "ExternalFileReferences":[
+            {
+                "Path":"$bdroot\/If Action Subsystem\/Serial Send",
+                "Reference":"instrumentseriallib\/Serial Send",
+                "SID":"73",
+                "Type":"LIBRARY_BLOCK"
+            },
+            {
+                "Path":"$bdroot\/Serial Configuration",
+                "Reference":"instrumentseriallib\/Serial Configuration",
+                "SID":"8",
+                "Type":"LIBRARY_BLOCK"
+            },
+            {
+                "Path":"$bdroot\/Serial Receive",
+                "Reference":"instrumentseriallib\/Serial Receive",
+                "SID":"50",
+                "Type":"LIBRARY_BLOCK"
+            }
+        ],
+        "PreCompExecutionDomainType":"Unset",
+        "SimulinkSubDomainType":"Simulink",
+        "SolverName":"FixedStepAuto"
+    }
+}

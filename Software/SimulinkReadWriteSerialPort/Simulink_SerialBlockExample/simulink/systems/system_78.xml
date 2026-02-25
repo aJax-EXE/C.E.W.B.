@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[0, 0, 1920, 1036]</P>
+  <P Name="ZoomFactor">250</P>
+  <Block BlockType="ActionPort" Name="Action Port" SID="80">
+    <P Name="Position">[170, 15, 229, 43]</P>
+    <P Name="ZOrder">-2</P>
+    <P Name="ActionPortLabel">else</P>
+  </Block>
+  <Block BlockType="Reference" Name="Serial Send" SID="73">
+    <PortCounts in="1"/>
+    <P Name="Position">[270, 117, 400, 173]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Priority">1</P>
+    <P Name="LibraryVersion">8.0</P>
+    <P Name="SourceBlock">instrumentseriallib/Serial Send</P>
+    <P Name="SourceType">system.SerialSend</P>
+    <InstanceData>
+      <P Name="PortSel">/dev/ttyACM0</P>
+      <P Name="Port">/dev/ttyACM0</P>
+      <P Name="ComPort">/dev/ttyACM0</P>
+      <P Name="Header">[]</P>
+      <P Name="Terminator">LF (&apos;\n&apos;)</P>
+      <P Name="CustomTerminator">[]</P>
+      <P Name="EnableBlockingMode">on</P>
+      <P Name="SimulateUsing">Interpreted execution</P>
+      <P Name="BlockInModel">on</P>
+      <P Name="aMode">1</P>
+    </InstanceData>
+  </Block>
+  <Block BlockType="StringConstant" Name="String Constant" SID="74">
+    <P Name="Position">[30, 115, 120, 165]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="String">&quot;1111,5556&quot;</P>
+  </Block>
+  <Block BlockType="StringToASCII" Name="String to ASCII" SID="75">
+    <P Name="Position">[155, 123, 245, 157]</P>
+    <P Name="ZOrder">100000</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">1</P>
+    <P Name="Src">74#out:1</P>
+    <P Name="Dst">75#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">2</P>
+    <P Name="Src">75#out:1</P>
+    <P Name="Points">[3, 0; 0, 5]</P>
+    <P Name="Dst">73#in:1</P>
+  </Line>
+</System>

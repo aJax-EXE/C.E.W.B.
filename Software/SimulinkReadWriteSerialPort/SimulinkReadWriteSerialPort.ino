@@ -1,6 +1,6 @@
 
-int v_motor = 0123;
-int p_encoder = 0456;
+int v_motor = 123;
+int p_encoder = 456;
 int int_aux = 0;
 char str_aux[11];                // each number is defined as a string "XXXX,XXXX\n", where X is a digit [0:9]
   

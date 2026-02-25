@@ -21,7 +21,7 @@ void loop() {
   float rads2 = (count2 * 2 * PI) / 2048.0;
 
   Serial.print("1. Count: ");
-  Serial.print(count1);
+  Serial.print(mainEncoder.getCount());
   Serial.print(" | Angle: ");
   Serial.print(angle1, 4);
   Serial.print(" deg | Direction: ");

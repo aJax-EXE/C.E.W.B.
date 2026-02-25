@@ -5,6 +5,1108 @@
 	(uuid "70ebb8ff-78c1-45cd-b87c-fb7ced48472e")
 	(paper "User" 303.962 217.322)
 	(lib_symbols
+		(symbol "AdafruitDRV8871DriverBreakout:DRV8871_manual"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "DRV1"
+				(at 0 17.78 0)
+				(effects
+					(font
+						(size 1.27 1.0795)
+					)
+				)
+			)
+			(property "Value" "~"
+				(at 0 15.24 0)
+				(effects
+					(font
+						(size 1.27 1.0795)
+					)
+				)
+			)
+			(property "Footprint" "DRV8871_driver(1):DRV8871_manual"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "DRV8871 - 3.6A PWM Motor Driver"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "DRV8871_manual_1_0"
+				(polyline
+					(pts
+						(xy -10.16 12.7) (xy 10.16 12.7)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -10.16 7.62) (xy -10.16 12.7)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -10.16 7.62) (xy 10.16 7.62)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -10.16 -5.08) (xy -10.16 7.62)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -10.16 -5.08) (xy -10.16 -12.7)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -10.16 -12.7) (xy 10.16 -12.7)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 10.16 12.7) (xy 10.16 7.62)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 10.16 7.62) (xy 10.16 -5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 10.16 -5.08) (xy -10.16 -5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 10.16 -12.7) (xy 10.16 -5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(text "DRV8871 (3.6A\nPWM Motor Driver)"
+					(at 0 10.16 0)
+					(effects
+						(font
+							(size 1.27 1.0795)
+						)
+					)
+				)
+				(text "VM: 6.5-45V\nfPWM: 0-100kHz\nTemp: -40~~125°C"
+					(at 0 -8.89 0)
+					(effects
+						(font
+							(size 1.27 1.0795)
+						)
+					)
+				)
+				(pin input line
+					(at -12.7 5.08 0)
+					(length 2.54)
+					(name "In2"
+						(effects
+							(font
+								(size 1.524 1.524)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -12.7 2.54 0)
+					(length 2.54)
+					(name "In1"
+						(effects
+							(font
+								(size 1.524 1.524)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.524 1.524)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -12.7 0 0)
+					(length 2.54)
+					(name "Vm"
+						(effects
+							(font
+								(size 1.524 1.524)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.524 1.524)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -12.7 -2.54 0)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.524 1.524)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.524 1.524)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 12.7 5.08 180)
+					(length 2.54)
+					(name "Out_2"
+						(effects
+							(font
+								(size 1.524 1.524)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.524 1.524)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 12.7 2.54 180)
+					(length 2.54)
+					(name "Out_1"
+						(effects
+							(font
+								(size 1.524 1.524)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.524 1.524)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 12.7 0 180)
+					(length 2.54)
+					(name "PW_+"
+						(effects
+							(font
+								(size 1.524 1.524)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.524 1.524)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 12.7 -2.54 180)
+					(length 2.54)
+					(name "PW_-"
+						(effects
+							(font
+								(size 1.524 1.524)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.524 1.524)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "CEWBArduinoUnoR3:A000066"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "A"
+				(at -7.62 13.462 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Value" "A000066"
+				(at -7.62 -12.7 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Footprint" "A000066:ARDUINO_A000066"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "MF" "Arduino"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "DESCRIPTION" "Arduino UNO Rev3 Microcontroller Board, ATmega328P | Arduino A000066"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "PACKAGE" "Non-Standard Arduino"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "PRICE" "None"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "SNAPEDA_LINK" "https://www.snapeda.com/parts/A000066/Arduino/view-part/?ref=snap"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "MP" "A000066"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "AVAILABILITY" "In Stock"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "CHECK_PRICES" "https://www.snapeda.com/parts/A000066/Arduino/view-part/?ref=eda"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(symbol "A000066_1_0"
+				(rectangle
+					(start -7.62 -10.16)
+					(end 7.62 12.7)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 10.16 0)
+					(length 5.08)
+					(name "P1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "P1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 7.62 0)
+					(length 5.08)
+					(name "IOREF"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "IOREF"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 5.08 0)
+					(length 5.08)
+					(name "RST"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "RST"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -12.7 2.54 0)
+					(length 5.08)
+					(name "3V3"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "3V3"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -12.7 0 0)
+					(length 5.08)
+					(name "5V"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "5V"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -12.7 -2.54 0)
+					(length 5.08)
+					(name "GND_1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "GND_1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -12.7 -5.08 0)
+					(length 5.08)
+					(name "GND_2"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "GND_2"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -12.7 -7.62 0)
+					(length 5.08)
+					(name "VIN"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "VIN"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+			)
+			(symbol "A000066_2_0"
+				(rectangle
+					(start -7.62 -10.16)
+					(end 7.62 7.62)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 5.08 0)
+					(length 5.08)
+					(name "A0"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "A0"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 2.54 0)
+					(length 5.08)
+					(name "A1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "A1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 0 0)
+					(length 5.08)
+					(name "A2"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "A2"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 -2.54 0)
+					(length 5.08)
+					(name "A3"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "A3"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 -5.08 0)
+					(length 5.08)
+					(name "A4"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "A4"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 -7.62 0)
+					(length 5.08)
+					(name "A5"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "A5"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+			)
+			(symbol "A000066_3_0"
+				(rectangle
+					(start -7.62 -12.7)
+					(end 7.62 10.16)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 7.62 0)
+					(length 5.08)
+					(name "D0"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "D0"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 5.08 0)
+					(length 5.08)
+					(name "D1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "D1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 2.54 0)
+					(length 5.08)
+					(name "D2"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "D2"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 0 0)
+					(length 5.08)
+					(name "D3"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "D3"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 -2.54 0)
+					(length 5.08)
+					(name "D4"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "D4"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 -5.08 0)
+					(length 5.08)
+					(name "D5"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "D5"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 -7.62 0)
+					(length 5.08)
+					(name "D6"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "D6"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 -10.16 0)
+					(length 5.08)
+					(name "D7"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "D7"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+			)
+			(symbol "A000066_4_0"
+				(rectangle
+					(start -7.62 -15.24)
+					(end 7.62 12.7)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 10.16 0)
+					(length 5.08)
+					(name "D8"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "D8"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 7.62 0)
+					(length 5.08)
+					(name "D9"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "D9"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 5.08 0)
+					(length 5.08)
+					(name "D10"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "D10"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 2.54 0)
+					(length 5.08)
+					(name "D11"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "D11"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 0 0)
+					(length 5.08)
+					(name "D12"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "D12"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 -2.54 0)
+					(length 5.08)
+					(name "D13"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "D13"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -12.7 -5.08 0)
+					(length 5.08)
+					(name "GND_3"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "GND_3"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 -7.62 0)
+					(length 5.08)
+					(name "AREF"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "AREF"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 -10.16 0)
+					(length 5.08)
+					(name "AD4_SDA"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "A4_SDA"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 -12.7 0)
+					(length 5.08)
+					(name "AD5_SCL"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "A5_SCL"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Connector:Conn_01x04_Socket"
 			(pin_names
 				(offset 1.016)
@@ -254,681 +1356,742 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "MCU_Module:Arduino_UNO_R3"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "A"
-				(at -10.16 23.495 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
+	)
+	(symbol
+		(lib_id "CEWBArduinoUnoR3:A000066")
+		(at 134.62 40.64 0)
+		(unit 2)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3ff91d1d-fb8b-49bf-ba12-e397f928bac9")
+		(property "Reference" "A2"
+			(at 143.51 40.6399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "A000066"
+			(at 143.51 43.1799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "A000066:ARDUINO_A000066"
+			(at 134.62 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 134.62 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 134.62 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MF" "Arduino"
+			(at 134.62 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" "Arduino UNO Rev3 Microcontroller Board, ATmega328P | Arduino A000066"
+			(at 134.62 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" "Non-Standard Arduino"
+			(at 134.62 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "PRICE" "None"
+			(at 134.62 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "SNAPEDA_LINK" "https://www.snapeda.com/parts/A000066/Arduino/view-part/?ref=snap"
+			(at 134.62 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MP" "A000066"
+			(at 134.62 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "AVAILABILITY" "In Stock"
+			(at 134.62 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "CHECK_PRICES" "https://www.snapeda.com/parts/A000066/Arduino/view-part/?ref=eda"
+			(at 134.62 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(pin "D2"
+			(uuid "f5886eeb-37f5-43a4-b869-0e16bbf8a37e")
+		)
+		(pin "D3"
+			(uuid "537251ba-2891-479a-9954-9dfdb6d12495")
+		)
+		(pin "D13"
+			(uuid "313b4d15-82ee-41ab-b8d4-6adf833c9efa")
+		)
+		(pin "A4"
+			(uuid "529ba031-45ef-4cf5-8378-a8910b50edcc")
+		)
+		(pin "A4_SDA"
+			(uuid "b5765443-ae0a-4fe1-9148-7b7b0f2cc4c9")
+		)
+		(pin "D7"
+			(uuid "0dc6f042-87c7-4d65-a450-df552d0616f4")
+		)
+		(pin "D0"
+			(uuid "f680e5de-9cc4-49f5-8a10-72663e6a0ab1")
+		)
+		(pin "D9"
+			(uuid "73fc8654-d41b-4dcb-ba77-26bde3347038")
+		)
+		(pin "D11"
+			(uuid "65818127-a438-4e3e-be05-f131ae8b52b9")
+		)
+		(pin "A0"
+			(uuid "d404b4ec-daf5-4cc2-ad68-759e74c090e0")
+		)
+		(pin "P1"
+			(uuid "34d4b74a-51e6-4db7-818a-960232b495d1")
+		)
+		(pin "D12"
+			(uuid "1b7a4f22-c8de-4f37-85ee-8ba032e40240")
+		)
+		(pin "RST"
+			(uuid "6e041f43-d5c3-499f-95a8-b709b7a6f05c")
+		)
+		(pin "A1"
+			(uuid "46cf8678-62ec-4369-ac1a-6fe6aad6ab73")
+		)
+		(pin "5V"
+			(uuid "2508e682-8c10-4b37-8941-f3ca384cf893")
+		)
+		(pin "GND_2"
+			(uuid "0666770e-451c-410b-a64e-790ff1ad2a9c")
+		)
+		(pin "GND_1"
+			(uuid "dd8b7ff3-9c45-4bb7-9519-b3db2d5c0250")
+		)
+		(pin "D4"
+			(uuid "03ddc282-60d9-4955-b108-3481aacda6f6")
+		)
+		(pin "D5"
+			(uuid "218fef1c-d0c7-4726-9e7a-d6e2933edccf")
+		)
+		(pin "3V3"
+			(uuid "7b4394a5-f54e-44ac-9710-2361663659ec")
+		)
+		(pin "VIN"
+			(uuid "86dc54db-4982-40ee-a3e5-fd467675687f")
+		)
+		(pin "A2"
+			(uuid "2e0d4ed6-8cc2-4114-8497-f29df6ff4412")
+		)
+		(pin "A5"
+			(uuid "ec34f8f8-d8c6-47f9-9cf5-f525744ff40a")
+		)
+		(pin "D10"
+			(uuid "3e7fc47a-b399-4ad9-93cd-64a799c5c457")
+		)
+		(pin "AREF"
+			(uuid "798e7316-7eff-4920-b8e0-b548ab840142")
+		)
+		(pin "IOREF"
+			(uuid "9b614e08-ff03-4d07-a5da-58aac31ef5b4")
+		)
+		(pin "A3"
+			(uuid "7c3a3d75-2b04-4558-a0ef-2524dfcbc0b7")
+		)
+		(pin "A5_SCL"
+			(uuid "ee79ce02-25ae-45c5-907b-c59840f14413")
+		)
+		(pin "D8"
+			(uuid "a19390da-e5b3-462d-8048-b43acb99892a")
+		)
+		(pin "D6"
+			(uuid "f0bcd8c0-b6b4-4c64-8b66-d4b4bf6e1a7f")
+		)
+		(pin "D1"
+			(uuid "e6262528-57a0-4ec7-bfa5-612647c12556")
+		)
+		(pin "GND_3"
+			(uuid "f2a35ee7-b5ff-4ba9-8398-1c4ea42b5ec6")
+		)
+		(instances
+			(project ""
+				(path "/70ebb8ff-78c1-45cd-b87c-fb7ced48472e"
+					(reference "A2")
+					(unit 2)
 				)
 			)
-			(property "Value" "Arduino_UNO_R3"
-				(at 5.08 -26.67 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(property "Footprint" "Module:Arduino_UNO_R3"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://www.arduino.cc/en/Main/arduinoBoardUno"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Arduino UNO Microcontroller Module, release 3"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "Arduino UNO R3 Microcontroller Module Atmel AVR USB"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "Arduino*UNO*R3*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Arduino_UNO_R3_0_1"
-				(rectangle
-					(start -10.16 22.86)
-					(end 10.16 -25.4)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-			)
-			(symbol "Arduino_UNO_R3_1_1"
-				(pin bidirectional line
-					(at -12.7 15.24 0)
-					(length 2.54)
-					(name "D0/RX"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "15"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -12.7 12.7 0)
-					(length 2.54)
-					(name "D1/TX"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "16"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -12.7 10.16 0)
-					(length 2.54)
-					(name "D2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "17"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -12.7 7.62 0)
-					(length 2.54)
-					(name "D3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "18"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -12.7 5.08 0)
-					(length 2.54)
-					(name "D4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "19"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -12.7 2.54 0)
-					(length 2.54)
-					(name "D5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "20"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -12.7 0 0)
-					(length 2.54)
-					(name "D6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "21"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -12.7 -2.54 0)
-					(length 2.54)
-					(name "D7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "22"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -12.7 -5.08 0)
-					(length 2.54)
-					(name "D8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "23"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -12.7 -7.62 0)
-					(length 2.54)
-					(name "D9"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "24"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -12.7 -10.16 0)
-					(length 2.54)
-					(name "D10"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "25"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -12.7 -12.7 0)
-					(length 2.54)
-					(name "D11"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "26"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -12.7 -15.24 0)
-					(length 2.54)
-					(name "D12"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "27"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -12.7 -17.78 0)
-					(length 2.54)
-					(name "D13"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "28"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin no_connect line
-					(at -10.16 -20.32 0)
-					(length 2.54)
-					(hide yes)
-					(name "NC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -2.54 25.4 270)
-					(length 2.54)
-					(name "VIN"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -2.54 -27.94 90)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "29"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 0 -27.94 90)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_out line
-					(at 2.54 25.4 270)
-					(length 2.54)
-					(name "3V3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 2.54 -27.94 90)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_out line
-					(at 5.08 25.4 270)
-					(length 2.54)
-					(name "+5V"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 12.7 15.24 180)
-					(length 2.54)
-					(name "~{RESET}"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at 12.7 10.16 180)
-					(length 2.54)
-					(name "IOREF"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 12.7 5.08 180)
-					(length 2.54)
-					(name "AREF"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "30"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 12.7 0 180)
-					(length 2.54)
-					(name "A0"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "9"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 12.7 -2.54 180)
-					(length 2.54)
-					(name "A1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "10"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 12.7 -5.08 180)
-					(length 2.54)
-					(name "A2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "11"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 12.7 -7.62 180)
-					(length 2.54)
-					(name "A3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "12"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 12.7 -10.16 180)
-					(length 2.54)
-					(name "SDA/A4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "13"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 12.7 -12.7 180)
-					(length 2.54)
-					(name "SCL/A5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "14"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 12.7 -17.78 180)
-					(length 2.54)
-					(name "SDA/A4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "31"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 12.7 -20.32 180)
-					(length 2.54)
-					(name "SCL/A5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "32"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
 		)
 	)
 	(symbol
-		(lib_id "MCU_Module:Arduino_UNO_R3")
-		(at 113.03 95.25 0)
+		(lib_id "CEWBArduinoUnoR3:A000066")
+		(at 241.3 41.91 0)
+		(unit 4)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a5247b56-2386-4ec7-91f5-758f421d2121")
+		(property "Reference" "A2"
+			(at 250.19 41.9099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "A000066"
+			(at 250.19 44.4499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "A000066:ARDUINO_A000066"
+			(at 241.3 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 241.3 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 241.3 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MF" "Arduino"
+			(at 241.3 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" "Arduino UNO Rev3 Microcontroller Board, ATmega328P | Arduino A000066"
+			(at 241.3 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" "Non-Standard Arduino"
+			(at 241.3 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "PRICE" "None"
+			(at 241.3 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "SNAPEDA_LINK" "https://www.snapeda.com/parts/A000066/Arduino/view-part/?ref=snap"
+			(at 241.3 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MP" "A000066"
+			(at 241.3 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "AVAILABILITY" "In Stock"
+			(at 241.3 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "CHECK_PRICES" "https://www.snapeda.com/parts/A000066/Arduino/view-part/?ref=eda"
+			(at 241.3 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(pin "D2"
+			(uuid "f5886eeb-37f5-43a4-b869-0e16bbf8a37e")
+		)
+		(pin "D3"
+			(uuid "537251ba-2891-479a-9954-9dfdb6d12495")
+		)
+		(pin "D13"
+			(uuid "313b4d15-82ee-41ab-b8d4-6adf833c9efa")
+		)
+		(pin "A4"
+			(uuid "529ba031-45ef-4cf5-8378-a8910b50edcc")
+		)
+		(pin "A4_SDA"
+			(uuid "b5765443-ae0a-4fe1-9148-7b7b0f2cc4c9")
+		)
+		(pin "D7"
+			(uuid "0dc6f042-87c7-4d65-a450-df552d0616f4")
+		)
+		(pin "D0"
+			(uuid "f680e5de-9cc4-49f5-8a10-72663e6a0ab1")
+		)
+		(pin "D9"
+			(uuid "73fc8654-d41b-4dcb-ba77-26bde3347038")
+		)
+		(pin "D11"
+			(uuid "65818127-a438-4e3e-be05-f131ae8b52b9")
+		)
+		(pin "A0"
+			(uuid "d404b4ec-daf5-4cc2-ad68-759e74c090e0")
+		)
+		(pin "P1"
+			(uuid "34d4b74a-51e6-4db7-818a-960232b495d1")
+		)
+		(pin "D12"
+			(uuid "1b7a4f22-c8de-4f37-85ee-8ba032e40240")
+		)
+		(pin "RST"
+			(uuid "6e041f43-d5c3-499f-95a8-b709b7a6f05c")
+		)
+		(pin "A1"
+			(uuid "46cf8678-62ec-4369-ac1a-6fe6aad6ab73")
+		)
+		(pin "5V"
+			(uuid "2508e682-8c10-4b37-8941-f3ca384cf893")
+		)
+		(pin "GND_2"
+			(uuid "0666770e-451c-410b-a64e-790ff1ad2a9c")
+		)
+		(pin "GND_1"
+			(uuid "dd8b7ff3-9c45-4bb7-9519-b3db2d5c0250")
+		)
+		(pin "D4"
+			(uuid "03ddc282-60d9-4955-b108-3481aacda6f6")
+		)
+		(pin "D5"
+			(uuid "218fef1c-d0c7-4726-9e7a-d6e2933edccf")
+		)
+		(pin "3V3"
+			(uuid "7b4394a5-f54e-44ac-9710-2361663659ec")
+		)
+		(pin "VIN"
+			(uuid "86dc54db-4982-40ee-a3e5-fd467675687f")
+		)
+		(pin "A2"
+			(uuid "2e0d4ed6-8cc2-4114-8497-f29df6ff4412")
+		)
+		(pin "A5"
+			(uuid "ec34f8f8-d8c6-47f9-9cf5-f525744ff40a")
+		)
+		(pin "D10"
+			(uuid "3e7fc47a-b399-4ad9-93cd-64a799c5c457")
+		)
+		(pin "AREF"
+			(uuid "798e7316-7eff-4920-b8e0-b548ab840142")
+		)
+		(pin "IOREF"
+			(uuid "9b614e08-ff03-4d07-a5da-58aac31ef5b4")
+		)
+		(pin "A3"
+			(uuid "7c3a3d75-2b04-4558-a0ef-2524dfcbc0b7")
+		)
+		(pin "A5_SCL"
+			(uuid "ee79ce02-25ae-45c5-907b-c59840f14413")
+		)
+		(pin "D8"
+			(uuid "a19390da-e5b3-462d-8048-b43acb99892a")
+		)
+		(pin "D6"
+			(uuid "f0bcd8c0-b6b4-4c64-8b66-d4b4bf6e1a7f")
+		)
+		(pin "D1"
+			(uuid "e6262528-57a0-4ec7-bfa5-612647c12556")
+		)
+		(pin "GND_3"
+			(uuid "f2a35ee7-b5ff-4ba9-8398-1c4ea42b5ec6")
+		)
+		(instances
+			(project ""
+				(path "/70ebb8ff-78c1-45cd-b87c-fb7ced48472e"
+					(reference "A2")
+					(unit 4)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "CEWBArduinoUnoR3:A000066")
+		(at 186.69 38.1 0)
+		(unit 3)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cc8be315-c5a9-40cf-9a9f-2f129d3ccd4f")
+		(property "Reference" "A2"
+			(at 195.58 38.0999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "A000066"
+			(at 195.58 40.6399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "A000066:ARDUINO_A000066"
+			(at 186.69 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 186.69 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 186.69 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MF" "Arduino"
+			(at 186.69 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" "Arduino UNO Rev3 Microcontroller Board, ATmega328P | Arduino A000066"
+			(at 186.69 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" "Non-Standard Arduino"
+			(at 186.69 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "PRICE" "None"
+			(at 186.69 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "SNAPEDA_LINK" "https://www.snapeda.com/parts/A000066/Arduino/view-part/?ref=snap"
+			(at 186.69 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MP" "A000066"
+			(at 186.69 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "AVAILABILITY" "In Stock"
+			(at 186.69 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "CHECK_PRICES" "https://www.snapeda.com/parts/A000066/Arduino/view-part/?ref=eda"
+			(at 186.69 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(pin "D2"
+			(uuid "f5886eeb-37f5-43a4-b869-0e16bbf8a37e")
+		)
+		(pin "D3"
+			(uuid "537251ba-2891-479a-9954-9dfdb6d12495")
+		)
+		(pin "D13"
+			(uuid "313b4d15-82ee-41ab-b8d4-6adf833c9efa")
+		)
+		(pin "A4"
+			(uuid "529ba031-45ef-4cf5-8378-a8910b50edcc")
+		)
+		(pin "A4_SDA"
+			(uuid "b5765443-ae0a-4fe1-9148-7b7b0f2cc4c9")
+		)
+		(pin "D7"
+			(uuid "0dc6f042-87c7-4d65-a450-df552d0616f4")
+		)
+		(pin "D0"
+			(uuid "f680e5de-9cc4-49f5-8a10-72663e6a0ab1")
+		)
+		(pin "D9"
+			(uuid "73fc8654-d41b-4dcb-ba77-26bde3347038")
+		)
+		(pin "D11"
+			(uuid "65818127-a438-4e3e-be05-f131ae8b52b9")
+		)
+		(pin "A0"
+			(uuid "d404b4ec-daf5-4cc2-ad68-759e74c090e0")
+		)
+		(pin "P1"
+			(uuid "34d4b74a-51e6-4db7-818a-960232b495d1")
+		)
+		(pin "D12"
+			(uuid "1b7a4f22-c8de-4f37-85ee-8ba032e40240")
+		)
+		(pin "RST"
+			(uuid "6e041f43-d5c3-499f-95a8-b709b7a6f05c")
+		)
+		(pin "A1"
+			(uuid "46cf8678-62ec-4369-ac1a-6fe6aad6ab73")
+		)
+		(pin "5V"
+			(uuid "2508e682-8c10-4b37-8941-f3ca384cf893")
+		)
+		(pin "GND_2"
+			(uuid "0666770e-451c-410b-a64e-790ff1ad2a9c")
+		)
+		(pin "GND_1"
+			(uuid "dd8b7ff3-9c45-4bb7-9519-b3db2d5c0250")
+		)
+		(pin "D4"
+			(uuid "03ddc282-60d9-4955-b108-3481aacda6f6")
+		)
+		(pin "D5"
+			(uuid "218fef1c-d0c7-4726-9e7a-d6e2933edccf")
+		)
+		(pin "3V3"
+			(uuid "7b4394a5-f54e-44ac-9710-2361663659ec")
+		)
+		(pin "VIN"
+			(uuid "86dc54db-4982-40ee-a3e5-fd467675687f")
+		)
+		(pin "A2"
+			(uuid "2e0d4ed6-8cc2-4114-8497-f29df6ff4412")
+		)
+		(pin "A5"
+			(uuid "ec34f8f8-d8c6-47f9-9cf5-f525744ff40a")
+		)
+		(pin "D10"
+			(uuid "3e7fc47a-b399-4ad9-93cd-64a799c5c457")
+		)
+		(pin "AREF"
+			(uuid "798e7316-7eff-4920-b8e0-b548ab840142")
+		)
+		(pin "IOREF"
+			(uuid "9b614e08-ff03-4d07-a5da-58aac31ef5b4")
+		)
+		(pin "A3"
+			(uuid "7c3a3d75-2b04-4558-a0ef-2524dfcbc0b7")
+		)
+		(pin "A5_SCL"
+			(uuid "ee79ce02-25ae-45c5-907b-c59840f14413")
+		)
+		(pin "D8"
+			(uuid "a19390da-e5b3-462d-8048-b43acb99892a")
+		)
+		(pin "D6"
+			(uuid "f0bcd8c0-b6b4-4c64-8b66-d4b4bf6e1a7f")
+		)
+		(pin "D1"
+			(uuid "e6262528-57a0-4ec7-bfa5-612647c12556")
+		)
+		(pin "GND_3"
+			(uuid "f2a35ee7-b5ff-4ba9-8398-1c4ea42b5ec6")
+		)
+		(instances
+			(project ""
+				(path "/70ebb8ff-78c1-45cd-b87c-fb7ced48472e"
+					(reference "A2")
+					(unit 3)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "CEWBArduinoUnoR3:A000066")
+		(at 82.55 50.8 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "87c4e1f5-2b72-4887-9a9b-0feacb9aaa8b")
-		(property "Reference" "A1"
-			(at 120.2533 67.31 0)
+		(uuid "d2815090-bc93-43a7-a3a7-c5a16dcf27e7")
+		(property "Reference" "A2"
+			(at 91.44 48.2599 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -936,8 +2099,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Arduino_UNO_R3"
-			(at 120.2533 69.85 0)
+		(property "Value" "A000066"
+			(at 91.44 50.7999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -945,27 +2108,18 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Module:Arduino_UNO_R3"
-			(at 113.03 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.arduino.cc/en/Main/arduinoBoardUno"
-			(at 113.03 95.25 0)
+		(property "Footprint" "A000066:ARDUINO_A000066"
+			(at 82.55 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify bottom)
 				(hide yes)
 			)
 		)
-		(property "Description" "Arduino UNO Microcontroller Module, release 3"
-			(at 113.03 95.25 0)
+		(property "Datasheet" ""
+			(at 82.55 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -973,106 +2127,281 @@
 				(hide yes)
 			)
 		)
-		(pin "12"
-			(uuid "34a83fc5-28ed-4526-958e-f76d033b97af")
+		(property "Description" ""
+			(at 82.55 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
-		(pin "22"
-			(uuid "0c45b49b-909a-4e5c-8215-dc68ed6cc028")
+		(property "MF" "Arduino"
+			(at 82.55 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
 		)
-		(pin "14"
-			(uuid "420b0dcd-0702-499f-9c10-56191a3d7efe")
+		(property "DESCRIPTION" "Arduino UNO Rev3 Microcontroller Board, ATmega328P | Arduino A000066"
+			(at 82.55 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
 		)
-		(pin "31"
-			(uuid "96682954-0a92-450a-a9ce-f449383f379b")
+		(property "PACKAGE" "Non-Standard Arduino"
+			(at 82.55 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
 		)
-		(pin "6"
-			(uuid "08d539d4-e143-4694-9b12-f3d3a102646a")
+		(property "PRICE" "None"
+			(at 82.55 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
 		)
-		(pin "28"
-			(uuid "323e61a8-3f5e-4cd3-8f80-84ad87374dbb")
+		(property "SNAPEDA_LINK" "https://www.snapeda.com/parts/A000066/Arduino/view-part/?ref=snap"
+			(at 82.55 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
 		)
-		(pin "1"
-			(uuid "168377ee-222e-4143-9222-f991b591837e")
+		(property "MP" "A000066"
+			(at 82.55 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
 		)
-		(pin "3"
-			(uuid "b304d4f4-42e3-4b60-a448-c503d6285765")
+		(property "AVAILABILITY" "In Stock"
+			(at 82.55 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
 		)
-		(pin "29"
-			(uuid "a06eadda-88a7-4b77-acfa-dc7b5e085c77")
+		(property "CHECK_PRICES" "https://www.snapeda.com/parts/A000066/Arduino/view-part/?ref=eda"
+			(at 82.55 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
 		)
-		(pin "7"
-			(uuid "97a765d6-a1d9-4f30-afa7-4e2bc25ff008")
+		(pin "D2"
+			(uuid "f5886eeb-37f5-43a4-b869-0e16bbf8a37e")
 		)
-		(pin "8"
-			(uuid "f3bacfb8-3927-4984-bb5d-4764198b0416")
+		(pin "D3"
+			(uuid "537251ba-2891-479a-9954-9dfdb6d12495")
 		)
-		(pin "11"
-			(uuid "c437bb3f-f35a-4a43-a628-98ae0a557f6b")
+		(pin "D13"
+			(uuid "313b4d15-82ee-41ab-b8d4-6adf833c9efa")
 		)
-		(pin "17"
-			(uuid "4f81be7d-1100-49a7-b538-cdc54d5399fd")
+		(pin "A4"
+			(uuid "529ba031-45ef-4cf5-8378-a8910b50edcc")
 		)
-		(pin "16"
-			(uuid "87114690-0443-4059-b787-dc3504d09cdc")
+		(pin "A4_SDA"
+			(uuid "b5765443-ae0a-4fe1-9148-7b7b0f2cc4c9")
 		)
-		(pin "20"
-			(uuid "9bd4f89e-06b0-477a-9717-a459905440f2")
+		(pin "D7"
+			(uuid "0dc6f042-87c7-4d65-a450-df552d0616f4")
 		)
-		(pin "21"
-			(uuid "79ca31db-df76-4190-8408-9c1d95cf0698")
+		(pin "D0"
+			(uuid "f680e5de-9cc4-49f5-8a10-72663e6a0ab1")
 		)
-		(pin "9"
-			(uuid "5c8c4ca5-e1db-4a58-82d3-8ce6ab243c30")
+		(pin "D9"
+			(uuid "73fc8654-d41b-4dcb-ba77-26bde3347038")
 		)
-		(pin "18"
-			(uuid "0f43f043-3e37-4f2a-85c6-8cbae69fc5e1")
+		(pin "D11"
+			(uuid "65818127-a438-4e3e-be05-f131ae8b52b9")
 		)
-		(pin "5"
-			(uuid "af983076-e028-4a28-9fcc-3ded82ae6996")
+		(pin "A0"
+			(uuid "d404b4ec-daf5-4cc2-ad68-759e74c090e0")
 		)
-		(pin "15"
-			(uuid "2b60c5f1-8f7f-4634-8aad-4c275fc2b3b7")
+		(pin "P1"
+			(uuid "34d4b74a-51e6-4db7-818a-960232b495d1")
 		)
-		(pin "24"
-			(uuid "7939a733-703d-4630-9d4c-ac113065e576")
+		(pin "D12"
+			(uuid "1b7a4f22-c8de-4f37-85ee-8ba032e40240")
 		)
-		(pin "32"
-			(uuid "9aaeeaf6-1f05-4c14-b62b-ab36ab915ba0")
+		(pin "RST"
+			(uuid "6e041f43-d5c3-499f-95a8-b709b7a6f05c")
 		)
-		(pin "23"
-			(uuid "73f18d51-1e26-42e2-bf5a-aa69796ca4a4")
+		(pin "A1"
+			(uuid "46cf8678-62ec-4369-ac1a-6fe6aad6ab73")
 		)
-		(pin "2"
-			(uuid "31a1722e-ef4f-4651-8163-b3fe60f9b5b0")
+		(pin "5V"
+			(uuid "2508e682-8c10-4b37-8941-f3ca384cf893")
 		)
-		(pin "30"
-			(uuid "68c75f9f-cf7b-4018-887b-966e79e38590")
+		(pin "GND_2"
+			(uuid "0666770e-451c-410b-a64e-790ff1ad2a9c")
 		)
-		(pin "13"
-			(uuid "f02e4301-91da-4104-9845-8f54a0254f8e")
+		(pin "GND_1"
+			(uuid "dd8b7ff3-9c45-4bb7-9519-b3db2d5c0250")
 		)
-		(pin "26"
-			(uuid "5bde7860-776b-41fa-a977-40ac1253e8d2")
+		(pin "D4"
+			(uuid "03ddc282-60d9-4955-b108-3481aacda6f6")
 		)
-		(pin "19"
-			(uuid "aead17f6-b1c0-47af-bba4-04bd69c158f7")
+		(pin "D5"
+			(uuid "218fef1c-d0c7-4726-9e7a-d6e2933edccf")
 		)
-		(pin "4"
-			(uuid "a4fef78e-1c02-483e-9f9a-7c35d8a12de4")
+		(pin "3V3"
+			(uuid "7b4394a5-f54e-44ac-9710-2361663659ec")
 		)
-		(pin "27"
-			(uuid "33f789b5-25d8-4f07-a8e0-cd1ec41fa66f")
+		(pin "VIN"
+			(uuid "86dc54db-4982-40ee-a3e5-fd467675687f")
 		)
-		(pin "10"
-			(uuid "d04a2756-cd0b-46ee-a36d-bea5af1ca692")
+		(pin "A2"
+			(uuid "2e0d4ed6-8cc2-4114-8497-f29df6ff4412")
 		)
-		(pin "25"
-			(uuid "07cc8f7d-6b91-4783-93a5-3b5a585e4bd6")
+		(pin "A5"
+			(uuid "ec34f8f8-d8c6-47f9-9cf5-f525744ff40a")
+		)
+		(pin "D10"
+			(uuid "3e7fc47a-b399-4ad9-93cd-64a799c5c457")
+		)
+		(pin "AREF"
+			(uuid "798e7316-7eff-4920-b8e0-b548ab840142")
+		)
+		(pin "IOREF"
+			(uuid "9b614e08-ff03-4d07-a5da-58aac31ef5b4")
+		)
+		(pin "A3"
+			(uuid "7c3a3d75-2b04-4558-a0ef-2524dfcbc0b7")
+		)
+		(pin "A5_SCL"
+			(uuid "ee79ce02-25ae-45c5-907b-c59840f14413")
+		)
+		(pin "D8"
+			(uuid "a19390da-e5b3-462d-8048-b43acb99892a")
+		)
+		(pin "D6"
+			(uuid "f0bcd8c0-b6b4-4c64-8b66-d4b4bf6e1a7f")
+		)
+		(pin "D1"
+			(uuid "e6262528-57a0-4ec7-bfa5-612647c12556")
+		)
+		(pin "GND_3"
+			(uuid "f2a35ee7-b5ff-4ba9-8398-1c4ea42b5ec6")
 		)
 		(instances
 			(project ""
 				(path "/70ebb8ff-78c1-45cd-b87c-fb7ced48472e"
-					(reference "A1")
+					(reference "A2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "AdafruitDRV8871DriverBreakout:DRV8871_manual")
+		(at 210.82 91.44 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f120b65d-a4a6-4714-98aa-6c570783313c")
+		(property "Reference" "DRV1"
+			(at 210.82 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.0795)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 210.82 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.0795)
+				)
+			)
+		)
+		(property "Footprint" "DRV8871_driver(1):DRV8871_manual"
+			(at 210.82 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 210.82 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "DRV8871 - 3.6A PWM Motor Driver"
+			(at 210.82 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "5ce79f63-5c4f-42d2-8304-c20faef04387")
+		)
+		(pin "6"
+			(uuid "6aaf8c44-e3e0-4277-9e9a-0edb06ff80da")
+		)
+		(pin "7"
+			(uuid "37d82997-492b-4501-8649-78b44ee8bbeb")
+		)
+		(pin "3"
+			(uuid "2d5e9244-464c-4051-b6d1-fa5edf73dcfb")
+		)
+		(pin "2"
+			(uuid "5d32874e-5117-4e2f-88a9-6831f956b74b")
+		)
+		(pin "1"
+			(uuid "6fb73a12-46f9-4bb5-9e7d-87de3f7d0428")
+		)
+		(pin "5"
+			(uuid "06d47763-c6dd-4162-bcec-a7f78c92b669")
+		)
+		(pin "8"
+			(uuid "70595361-9ed5-4d78-bcae-c317a8ed0161")
+		)
+		(instances
+			(project ""
+				(path "/70ebb8ff-78c1-45cd-b87c-fb7ced48472e"
+					(reference "DRV1")
 					(unit 1)
 				)
 			)
@@ -1080,7 +2409,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_01x04_Socket")
-		(at 157.48 72.39 0)
+		(at 168.91 59.69 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1088,8 +2417,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f6616406-4669-4168-87c0-cfdd4c2989d1")
-		(property "Reference" "J1"
-			(at 158.75 72.3899 0)
+		(property "Reference" "Motor_Driver1"
+			(at 170.18 59.6899 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1098,7 +2427,7 @@
 			)
 		)
 		(property "Value" "Conn_01x04_Socket"
-			(at 158.75 74.9299 0)
+			(at 170.18 62.2299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1107,7 +2436,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 157.48 72.39 0)
+			(at 168.91 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1116,7 +2445,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 157.48 72.39 0)
+			(at 168.91 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1125,7 +2454,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x04, script generated"
-			(at 157.48 72.39 0)
+			(at 168.91 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1148,7 +2477,7 @@
 		(instances
 			(project ""
 				(path "/70ebb8ff-78c1-45cd-b87c-fb7ced48472e"
-					(reference "J1")
+					(reference "Motor_Driver1")
 					(unit 1)
 				)
 			)

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[0, 0, 1920, 1036]</P>
+  <P Name="Open">on</P>
+  <P Name="ZoomFactor">135</P>
+  <P Name="ReportName">simulink-default.rpt</P>
+  <P Name="SIDHighWatermark">82</P>
+  <Block BlockType="ASCIIToString" Name="ASCII to String" SID="68">
+    <P Name="Position">[425, 173, 515, 207]</P>
+    <P Name="ZOrder">100000</P>
+  </Block>
+  <Block BlockType="Clock" Name="Clock" SID="82">
+    <P Name="Position">[-140, 135, -120, 155]</P>
+    <P Name="ZOrder">100000</P>
+  </Block>
+  <Block BlockType="Display" Name="Display: v_motor1" SID="69">
+    <PortCounts in="1"/>
+    <P Name="Position">[485, -61, 565, 131]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Decimation">50</P>
+  </Block>
+  <Block BlockType="Display" Name="Display: v_motor2" SID="70">
+    <PortCounts in="1"/>
+    <P Name="Position">[535, 194, 620, 226]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Decimation">50</P>
+  </Block>
+  <Block BlockType="If" Name="If" SID="77">
+    <PortCounts in="1" out="2"/>
+    <P Name="Position">[-100, 101, 0, 139]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="IfExpression">u1 &lt; 1</P>
+  </Block>
+  <Block BlockType="SubSystem" Name="If Action&#xA;Subsystem" SID="78">
+    <PortCounts ifaction="1"/>
+    <P Name="Position">[45, 182, 115, 218]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="LibrarySourceProduct" Ref="bdmxdata:LibrarySourceProduct_78"/>
+    <P Name="TreatAsAtomicUnit">on</P>
+    <P Name="ContentPreviewEnabled">on</P>
+    <System Ref="system_78"/>
+  </Block>
+  <Block BlockType="Scope" Name="Scope" SID="72">
+    <PortCounts in="1"/>
+    <P Name="Position">[320, -111, 350, -79]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="ScopeSpecificationString">Simulink.scopes.TimeScopeBlockCfg(&apos;CurrentConfiguration&apos;, extmgr.ConfigurationSet(extmgr.Configuration(&apos;Core&apos;,&apos;General UI&apos;,true),extmgr.Configuration(&apos;Core&apos;,&apos;Source UI&apos;,true),extmgr.Configuration(&apos;Sources&apos;,&apos;WiredSimulink&apos;,true),extmgr.Configuration(&apos;Visuals&apos;,&apos;Time Domain&apos;,true,&apos;SerializedDisplays&apos;,{struct(&apos;MinYLimReal&apos;,&apos;4.625&apos;,&apos;MaxYLimReal&apos;,&apos;58.375&apos;,&apos;YLabelReal&apos;,&apos;&apos;,&apos;MinYLimMag&apos;,&apos;4.625&apos;,&apos;MaxYLimMag&apos;,&apos;58.375&apos;,&apos;LegendVisibility&apos;,&apos;off&apos;,&apos;XGrid&apos;,true,&apos;YGrid&apos;,true,&apos;PlotMagPhase&apos;,false,&apos;AxesColor&apos;,[0 0 0],&apos;AxesTickColor&apos;,[0.686274509803922 0.686274509803922 0.686274509803922],&apos;ColorOrder&apos;,[1 0.909803921568627 0.392156862745098;0.149019607843137 0.549019607843137 0.866666666666667;0.96078431372549 0.466666666666667 0.16078431372549;0.286274509803922 0.858823529411765 0.250980392156863;0.752941176470588 0.36078431372549 0.984313725490196;0.423529411764706 0.956862745098039 1;0.949019607843137 0.403921568627451 0.772549019607843],&apos;Title&apos;,&apos;%&lt;SignalLabel&gt;&apos;,&apos;LinePropertiesCache&apos;,{{}},&apos;UserDefinedChannelNames&apos;,{{}},&apos;NumLines&apos;,10,&apos;LineNames&apos;,{{&apos;Serial Receive:1&apos;,&apos;Serial Receive:2&apos;,&apos;Serial Receive:3&apos;,&apos;Serial Receive:4&apos;,&apos;Serial Receive:5&apos;,&apos;Serial Receive:6&apos;,&apos;Serial Receive:7&apos;,&apos;Serial Receive:8&apos;,&apos;Serial Receive:9&apos;,&apos;Serial Receive:10&apos;}},&apos;ShowContent&apos;,true,&apos;Placement&apos;,1)},&apos;DisplayPropertyDefaults&apos;,struct(&apos;MinYLimReal&apos;,&apos;4.625&apos;,&apos;MaxYLimReal&apos;,&apos;58.375&apos;,&apos;YLabelReal&apos;,&apos;&apos;,&apos;MinYLimMag&apos;,&apos;4.625&apos;,&apos;MaxYLimMag&apos;,&apos;58.375&apos;,&apos;LegendVisibility&apos;,&apos;off&apos;,&apos;XGrid&apos;,true,&apos;YGrid&apos;,true,&apos;PlotMagPhase&apos;,false,&apos;AxesColor&apos;,[0 0 0],&apos;AxesTickColor&apos;,[0.686274509803922 0.686274509803922 0.686274509803922],&apos;ColorOrder&apos;,[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration(&apos;Tools&apos;,&apos;Plot Navigation&apos;,true),extmgr.Configuration(&apos;Tools&apos;,&apos;Measurements&apos;,true,&apos;Version&apos;,&apos;2024b&apos;)),&apos;Version&apos;,&apos;2024b&apos;)</P>
+    <P Name="NumInputPorts">1</P>
+    <P Name="Floating">off</P>
+  </Block>
+  <Block BlockType="Reference" Name="Serial Configuration" SID="8">
+    <PortCounts/>
+    <P Name="Position">[-145, -168, -35, -112]</P>
+    <P Name="ZOrder">74</P>
+    <P Name="Priority">-200000</P>
+    <P Name="LibrarySourceBlock">embeddedtargetslib/Host Communication/Serial Configuration</P>
+    <P Name="LibraryVersion">8.0</P>
+    <P Name="SourceBlock">instrumentseriallib/Serial Configuration</P>
+    <P Name="SourceType">system.SerialConfiguration</P>
+    <InstanceData>
+      <P Name="PortSel">/dev/ttyACM0</P>
+      <P Name="Port">/dev/ttyACM0</P>
+      <P Name="ComPort">/dev/ttyACM0</P>
+      <P Name="BaudRate">115200</P>
+      <P Name="DataBits">8</P>
+      <P Name="Parity">none</P>
+      <P Name="StopBits">1</P>
+      <P Name="ByteOrder">little-endian</P>
+      <P Name="FlowControl">none</P>
+      <P Name="Timeout">0.0001</P>
+      <P Name="SimulateUsing">Interpreted execution</P>
+      <P Name="BlockInModel">on</P>
+      <P Name="aMode">1</P>
+    </InstanceData>
+  </Block>
+  <Block BlockType="Reference" Name="Serial Receive" SID="50">
+    <PortCounts out="1"/>
+    <P Name="Position">[65, -58, 195, -2]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Priority">1</P>
+    <P Name="LibraryVersion">8.0</P>
+    <P Name="SourceBlock">instrumentseriallib/Serial Receive</P>
+    <P Name="SourceType">system.SerialReceive</P>
+    <InstanceData>
+      <P Name="PortSel">/dev/ttyACM0</P>
+      <P Name="Port">/dev/ttyACM0</P>
+      <P Name="ComPort">/dev/ttyACM0</P>
+      <P Name="DataType">uint8</P>
+      <P Name="SaveDataType">uint8</P>
+      <P Name="ToggleHeader">on</P>
+      <P Name="Header">[10]</P>
+      <P Name="ToggleDataSize">on</P>
+      <P Name="DataSize">[10 1]</P>
+      <P Name="ToggleTerminator">off</P>
+      <P Name="Terminator">LF (&apos;\n&apos;)</P>
+      <P Name="CustomTerminator">[]</P>
+      <P Name="InputFormat">Column major</P>
+      <P Name="EnableBlockingMode">on</P>
+      <P Name="ActionDataUnavailable">Output last received value</P>
+      <P Name="ActionWhenDataUnavailable">Output last received value</P>
+      <P Name="CustomValue">0</P>
+      <P Name="SampleTime">0.01</P>
+      <P Name="SimulateUsing">Interpreted execution</P>
+      <P Name="BlockInModel">on</P>
+      <P Name="aMode">1</P>
+    </InstanceData>
+  </Block>
+  <Line>
+    <P Name="ZOrder">70</P>
+    <P Name="Src">68#out:1</P>
+    <P Name="Dst">70#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">69</P>
+    <P Name="Src">50#out:1</P>
+    <P Name="Points">[80, 0]</P>
+    <Branch>
+      <P Name="ZOrder">83</P>
+      <P Name="Points">[0, -65]</P>
+      <P Name="Dst">72#in:1</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">82</P>
+      <P Name="Points">[154, 0; 0, 65]</P>
+      <Branch>
+        <P Name="ZOrder">72</P>
+        <P Name="Points">[0, 107; -24, 0]</P>
+        <P Name="Dst">68#in:1</P>
+      </Branch>
+      <Branch>
+        <P Name="ZOrder">71</P>
+        <P Name="Dst">69#in:1</P>
+      </Branch>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">94</P>
+    <P Name="Src">82#out:1</P>
+    <P Name="Dst">77#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">95</P>
+    <P Name="Src">77#out:2</P>
+    <P Name="Points">[75, 0]</P>
+    <P Name="Dst">78#ifaction</P>
+  </Line>
+</System>

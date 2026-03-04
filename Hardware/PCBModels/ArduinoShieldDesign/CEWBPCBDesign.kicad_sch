@@ -1902,7 +1902,7 @@
 		(uuid "9f7a81b5-d2fd-48b4-81aa-565b62a50294")
 	)
 	(junction
-		(at 118.11 134.62)
+		(at 114.3 133.35)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d568623c-5dfd-491e-aa4e-e7b05ba009b1")
@@ -2015,7 +2015,7 @@
 	)
 	(wire
 		(pts
-			(xy 116.84 134.62) (xy 118.11 134.62)
+			(xy 113.03 133.35) (xy 114.3 133.35)
 		)
 		(stroke
 			(width 0)
@@ -2065,7 +2065,7 @@
 	)
 	(wire
 		(pts
-			(xy 129.54 139.7) (xy 118.11 139.7)
+			(xy 125.73 138.43) (xy 114.3 138.43)
 		)
 		(stroke
 			(width 0)
@@ -2265,7 +2265,7 @@
 	)
 	(wire
 		(pts
-			(xy 118.11 139.7) (xy 118.11 134.62)
+			(xy 114.3 138.43) (xy 114.3 133.35)
 		)
 		(stroke
 			(width 0)
@@ -2275,7 +2275,7 @@
 	)
 	(wire
 		(pts
-			(xy 118.11 134.62) (xy 119.38 134.62)
+			(xy 114.3 133.35) (xy 115.57 133.35)
 		)
 		(stroke
 			(width 0)
@@ -2475,7 +2475,7 @@
 	)
 	(wire
 		(pts
-			(xy 129.54 134.62) (xy 129.54 139.7)
+			(xy 125.73 133.35) (xy 125.73 138.43)
 		)
 		(stroke
 			(width 0)
@@ -2534,7 +2534,7 @@
 		(uuid "e546135c-1ce2-4492-86cb-75c4396985d3")
 	)
 	(label "In2"
-		(at 116.84 134.62 180)
+		(at 113.03 133.35 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4205,7 +4205,7 @@
 	)
 	(symbol
 		(lib_id "Jumper:Jumper_2_Bridged")
-		(at 124.46 134.62 0)
+		(at 120.65 133.35 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4213,7 +4213,7 @@
 		(dnp no)
 		(uuid "f21eb3ef-7742-4fd7-bcf7-6b92b44e03e0")
 		(property "Reference" "JP2"
-			(at 124.46 129.54 0)
+			(at 120.65 128.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4221,7 +4221,7 @@
 			)
 		)
 		(property "Value" "Jumper_2_Bridged"
-			(at 124.46 132.08 0)
+			(at 120.65 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4229,7 +4229,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal"
-			(at 124.46 134.62 0)
+			(at 120.65 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4238,7 +4238,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 124.46 134.62 0)
+			(at 120.65 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4247,7 +4247,7 @@
 			)
 		)
 		(property "Description" "Jumper, 2-pole, closed/bridged"
-			(at 124.46 134.62 0)
+			(at 120.65 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)

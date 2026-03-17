@@ -1,17 +1,14 @@
 #include <CEWBEncoder.h>
 
-#define CMD_HEADER  0xAA
-#define DATA_HEADER 0x55
+#define IN1 9
+#define IN2 10
 
-#define IN1 5
-#define IN2 6
+#define CMD_HEADER 0xAA
+#define DATA_HEADER 0x55
 
 CEWBEncoder encoder(2,3,ENC2X);
 
-float voltageCommand = 0.0;
-long encoderCount = 0;
-
-unsigned long lastCommandTime = 0;
+float voltage = 0;
 
 void setup()
 {
@@ -23,28 +20,11 @@ void setup()
     encoder.begin();
 }
 
-void readCommand()
+void driveMotor(float v)
 {
-    if (Serial.available() >= 5)
-    {
-        if (Serial.read() == CMD_HEADER)
-        {
-            Serial.readBytes((char*)&voltageCommand, sizeof(float));
-            lastCommandTime = millis();
-        }
-    }
+    int pwm = constrain(abs(v)*255.0/12.0,0,255);
 
-    if (millis() - lastCommandTime > 200)
-        voltageCommand = 0;
-}
-
-void driveMotor(float voltage)
-{
-    voltage = constrain(voltage,-24.0,24.0);
-
-    int pwm = abs(voltage) * 255.0 / 24.0;
-
-    if(voltage >= 0)
+    if(v >= 0)
     {
         analogWrite(IN1,pwm);
         analogWrite(IN2,0);
@@ -56,22 +36,55 @@ void driveMotor(float voltage)
     }
 }
 
-void sendTelemetry()
+void readCommand()
 {
-    encoderCount = encoder.getCount();
+    static uint8_t state = 0;
+    static uint8_t buffer[4];
+    static uint8_t index = 0;
+
+    while(Serial.available())
+    {
+        uint8_t b = Serial.read();
+
+        switch(state)
+        {
+            case 0:     // wait for header
+                if(b == CMD_HEADER)
+                {
+                    index = 0;
+                    state = 1;
+                }
+                break;
+
+            case 1:     // read float bytes
+                buffer[index++] = b;
+
+                if(index >= 4)
+                {
+                    memcpy(&voltage,buffer,4);
+                    state = 0;
+                }
+                break;
+        }
+    }
+}
+
+void sendData()
+{
+    long count = encoder.getCount();
 
     Serial.write(DATA_HEADER);
-    Serial.write((byte*)&voltageCommand,sizeof(float));
-    Serial.write((byte*)&encoderCount,sizeof(long));
+    Serial.write((uint8_t*)&voltage,4);
+    Serial.write((uint8_t*)&count,4);
 }
 
 void loop()
 {
     readCommand();
 
-    driveMotor(voltageCommand);
+    driveMotor(voltage);
 
-    sendTelemetry();
+    sendData();
 
     delay(10);
 }

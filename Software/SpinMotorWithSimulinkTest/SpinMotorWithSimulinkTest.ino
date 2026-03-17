@@ -13,12 +13,15 @@ CEWBEncoder enc1(2, 3, ENC2X);
 // const int maxVolt = 24;
 
 
-float v_motor = 23;
-long p_encoder = 456;
+int v_motor = 123;
+int p_encoder = 456;
 int int_aux = 0;
-char str_aux[23];                // each number is defined as a string "XX.XXXX,XXXX\n", where X is a digit [0:9]
+char str_aux[11];     // each number is defined as a string "XX.XXXX,XXXX\n", where X is a digit [0:9]
 
 uint8_t PWMVal = 0;
+
+// Function to spin the motor
+void spinMotor(int);
   
 void setup() {
   // Setting the Motor Pins for the Motor Driver
@@ -30,34 +33,42 @@ void setup() {
   enc1.begin();
 
   Serial.begin(115200);
-  Serial.println("Beginning");
+  // Serial.println("Beginning");
 }
 
 void loop() {
 
     // ---- Send data to Linux ----
-    p_encoder = enc1.getCount();
+    // p_encoder = enc1.getCount();
 
     // ---->>>> read encoder here <<<<<---- 
-    Serial.print(v_motor,3);
-    Serial.print(",");
-    Serial.println(p_encoder);
+    sprintf (str_aux, "%04d,%04d\n", v_motor , p_encoder );
+    Serial.print(str_aux);
   
     // ---- Read data from Linux ----
     if (Serial.available()) {
       String line = Serial.readStringUntil('\n');
-      sscanf(line.c_str(), "%04f,%04d", &v_motor, &p_encoder);
+      sscanf(line.c_str(), "%04d,%04d", &v_motor, &p_encoder);
       // ---->>>> send voltage to the motor <<<<<----
-      // Turn the voltage into a PWM Value
-      PWMVal = voltToPWM(v_motor);
-
-      // Make the motor spin at that value
-      digitalWrite(MotorIn1, LOW);
-      analogWrite(MotorIn2, PWMVal);
+      spinMotor(v_motor);
       
     }
     delay(1);
     
+}
+
+void spinMotor(int v_motor) {
+  // Turn the voltage into a PWM Value
+  PWMVal = voltToPWM(v_motor);
+
+  // Make the motor spin at that value
+  if (v_motor >= 0) {
+    digitalWrite(MotorIn1, LOW);
+    analogWrite(MotorIn2, PWMVal);
+  } else {
+    digitalWrite(MotorIn2, LOW);
+    analogWrite(MotorIn1, PWMVal);
+  }
 }
 
 

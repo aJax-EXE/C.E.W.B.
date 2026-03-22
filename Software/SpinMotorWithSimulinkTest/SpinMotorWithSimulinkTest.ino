@@ -57,9 +57,10 @@ void loop() {
     
 }
 
+// Function to make the motor spin based on a given voltage value
 void spinMotor(int v_motor) {
   // Turn the voltage into a PWM Value
-  PWMVal = voltToPWM(v_motor);
+  PWMVal = abs(voltToPWM(v_motor));
 
   // Make the motor spin at that value
   if (v_motor >= 0) {

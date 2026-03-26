@@ -39,7 +39,7 @@ void setup() {
 void loop() {
 
     // ---- Send data to Linux ----
-    // p_encoder = enc1.getCount();
+    p_encoder = enc1.getCount();
 
     // ---->>>> read encoder here <<<<<---- 
     sprintf (str_aux, "%04d,%04d\n", v_motor , p_encoder );

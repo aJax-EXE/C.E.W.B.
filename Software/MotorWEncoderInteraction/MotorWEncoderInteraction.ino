@@ -1,117 +1,90 @@
-// ================= CONFIG =================
+#include <CEWBEncoder.h>
+
+// ==== ENCODER PINS ====
 #define ENC_A 2
 #define ENC_B 3
 
-#define IN1 9   // PWM pin
-#define IN2 10
+// ==== DRV8871 PINS ====
+#define IN1 9   // PWM
+#define IN2 10  // Direction
 
-// encoder resolution AFTER quadrature
-// example: 600 CPR encoder → 2400 counts
-const float COUNTS_PER_REV = 2400.0;
+CEWBEncoder encoder(ENC_A, ENC_B, ENC4X);
 
-// PID gains (tune these!)
-float Kp = 4.0;
-float Ki = 0.02;
-float Kd = 0.2;
+// ==== SETTINGS ====
+const float CPR = 512 * 4;
+const int MOTOR_SPEED = 80;
 
-// ================= GLOBALS =================
+unsigned long lastPrint = 0;
 
-volatile long encoderCount = 0;
+// ===== MOTOR CONTROL =====
 
-float targetAngle = 90.0;   // degrees (change this!)
-
-float integral = 0;
-float lastError = 0;
-
-unsigned long lastTime;
-
-// ================= ENCODER ISR =================
-
-void encoderISR() {
-  bool A = digitalRead(ENC_A);
-  bool B = digitalRead(ENC_B);
-
-  if (A == B) encoderCount++;
-  else encoderCount--;
+void motorForward(int speed) {
+  analogWrite(IN1, speed);
+  digitalWrite(IN2, LOW);
 }
 
-// ================= SETUP =================
+void motorReverse(int speed) {
+  analogWrite(IN1, speed);
+  digitalWrite(IN2, HIGH);
+}
+
+void motorCoast() {
+  analogWrite(IN1, 0);
+  digitalWrite(IN2, LOW);
+}
+
+void motorBrake() {
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, HIGH);
+}
 
 void setup() {
   Serial.begin(115200);
 
-  pinMode(ENC_A, INPUT_PULLUP);
-  pinMode(ENC_B, INPUT_PULLUP);
-
   pinMode(IN1, OUTPUT);
   pinMode(IN2, OUTPUT);
 
-  attachInterrupt(digitalPinToInterrupt(ENC_A), encoderISR, CHANGE);
-  attachInterrupt(digitalPinToInterrupt(ENC_B), encoderISR, CHANGE);
+  encoder.begin();
+  encoder.setCPR(CPR);
+  encoder.resetCount();
 
-  lastTime = millis();
+  // ===== SELECT STOP MODE =====
+  // encoder.setTargetDegrees(180.0);
+  encoder.setTargetCounts(10000);
+  // encoder.setTargetRadians(PI);
+
+  // encoder.enableTargetStop(true);
+
+  // Start motor
+  motorForward(MOTOR_SPEED);
+
+  Serial.println("DRV8871 motor running... stopping at target");
 }
-
-// ================= MOTOR DRIVER =================
-
-void setMotor(float value) {
-
-  value = constrain(value, -255, 255);
-
-  if (value > 0) {
-    // Forward
-    analogWrite(IN1, value);
-    digitalWrite(IN2, LOW);
-  }
-  else if (value < 0) {
-    // Reverse
-    analogWrite(IN1, -value);
-    digitalWrite(IN2, HIGH);
-  }
-  else {
-    // Brake / coast
-    digitalWrite(IN1, LOW);
-    digitalWrite(IN2, LOW);
-  }
-}
-
-
-// ================= MAIN LOOP =================
 
 void loop() {
 
-  // ----- Time step -----
-  unsigned long now = millis();
-  float dt = (now - lastTime) / 1000.0;
-  lastTime = now;
+  long count = encoder.getCount();
+  float degrees = (count / CPR) * 360.0;
 
-  // ----- Get angle -----
-  noInterrupts();
-  long counts = encoderCount;
-  interrupts();
+  Serial.println(encoder.getCount());
 
-  float angle = counts * 360.0 / COUNTS_PER_REV;
 
-  // ----- PID -----
-  float error = targetAngle - angle;
+  // ===== HARD STOP =====
+  if (encoder.reachedTarget()) {
+    Serial.println("STOP TRIGGERED");
+    motorBrake();
+    while(1);
+  }
 
-  integral += error * dt;
-  integral = constrain(integral, -100, 100);   // anti-windup
+  // ===== DEBUG PRINT =====
+  if (millis() - lastPrint > 100) {
+    Serial.print("Count: ");
+    Serial.print(count);
 
-  float derivative = (error - lastError) / dt;
-  lastError = error;
+    Serial.print(" | Deg: ");
+    Serial.println(degrees, 2);
 
-  float output = Kp * error + Ki * integral + Kd * derivative;
-
-  // ----- Drive motor -----
-  setMotor(output);
-
-  // ----- Debug -----
-  Serial.print("Angle: ");
-  Serial.print(angle);
-  Serial.print("  Output: ");
-  Serial.println(output);
-
-  delay(5);
+    lastPrint = millis();
+  }
 }
 

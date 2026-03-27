@@ -1,8 +1,5 @@
 #include <CEWBEncoder.h>
 
-#define IN1 5
-#define IN2 6
-
 // In order to declare an encoder counting type, 
 // ENC1X is no quad
 // ENC2X is 2x quad
@@ -17,9 +14,6 @@ void setup()
 {
     Serial.begin(115200);
 
-    pinMode(IN1,OUTPUT);
-    pinMode(IN2,OUTPUT);
-
     encoder.begin();
 }
 
@@ -29,9 +23,9 @@ void loop() {
 
 
   // Convert count to angle (degrees)
-  float angle = (count * 360.0) / 2048.0;
+  float angle = (count * 360.0) / 512 * 2;
   // Convert count to radians
-  float rads = (count * 2 * PI) / 2048.0;
+  float rads = (count * 2 * PI) / 512 * 2;
 
   Serial.print("Count: ");
   Serial.print(count);

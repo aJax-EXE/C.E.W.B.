@@ -503,7 +503,7 @@
       "plot": "../../GerberFiles/ForwardFiles/",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "ForwardCEWBPCBDesign.step",
       "svg": "",
       "vrml": ""
     },

@@ -14,7 +14,7 @@ char tx_buf[20];  // Transmit buffer: "#sXXXXXX,sXXXXXX\n" = 18 chars + null
 char rx_buf[20];  // Receive  buffer
 
 void setup() {
-  Serial.begin(500000);
+  Serial.begin(115200);
   Serial.println("Beginning");
 }
 
@@ -31,8 +31,6 @@ void loop() {
   // ---- Read data from Simulink ----
   if (Serial.available()) {
     String line = Serial.readStringUntil('\n');
-    Serial.print("GOT: ");
-    Serial.println(line);   // echo back for debugging
 
     // Expect the '#' start marker
     if (line.length() > 1 && line.charAt(0) == '#') {
@@ -48,5 +46,5 @@ void loop() {
     }
   }
 
-  delay(10);
+  delay(1);
 }

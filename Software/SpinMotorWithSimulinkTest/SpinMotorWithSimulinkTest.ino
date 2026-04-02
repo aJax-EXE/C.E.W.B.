@@ -13,8 +13,8 @@ CEWBEncoder enc1(2, 3, ENC2X);
 // const int maxVolt = 24;
 
 
-long v_motor = 123;
-long p_encoder = 456;
+int v_motor = 123;
+int p_encoder = 456;
 int int_aux = 0;
 char str_aux[12];     // each number is defined as a string "#sXXXXXX,sXXXXX\n", where X is a digit [0:9] and s is sign (+ or -)
 
@@ -39,16 +39,16 @@ void setup() {
 void loop() {
 
     // ---- Send data to Linux ----
-    // p_encoder = enc1.getCount();
+     p_encoder = enc1.getCount();
 
     // ---->>>> read encoder here <<<<<---- 
-    sprintf (str_aux, "#%04l,%04l\n", v_motor , p_encoder );
+    sprintf (str_aux, "#%04d,%04d\n", v_motor , p_encoder );
     Serial.print(str_aux);
   
     // ---- Read data from Linux ----
     if (Serial.available()) {
       String line = Serial.readStringUntil('\n');
-      sscanf(line.c_str(), "#%04l,%04l", &v_motor, &p_encoder);
+      sscanf(line.c_str(), "#%04d,%04d", &v_motor, &p_encoder);
       // ---->>>> send voltage to the motor <<<<<----
       spinMotor(v_motor);
       
@@ -71,5 +71,3 @@ void spinMotor(int v_motor) {
     analogWrite(MotorIn1, PWMVal);
   }
 }
-
-

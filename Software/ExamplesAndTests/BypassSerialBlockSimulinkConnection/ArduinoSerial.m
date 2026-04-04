@@ -4,7 +4,7 @@ classdef ArduinoSerial < matlab.System
     end
 
     properties (Nontunable)
-        COMPort = '/dev/ttyACM0'      % change to your port
+        COMPort = '/dev/ttyACM0'      % COM Port
         BaudRate = 115200
     end
 
@@ -26,14 +26,14 @@ classdef ArduinoSerial < matlab.System
             target_step = 0.010;
 
             try
-                % --- Flush anything leftover before sending ---
+                % Flush anything leftover before sending
                 flush(obj.SerialPort);
 
-                % --- Send request ---
+                % Send request
                 packet = sprintf('#%+07d,%+07d\n', int32(v_in), int32(p_in));
                 writeline(obj.SerialPort, packet);
 
-                % --- Wait for exactly one response ---
+                % Wait for exactly one response
                 timeout = 0.009;
                 t_start = tic;
                 while obj.SerialPort.NumBytesAvailable < 17
@@ -42,7 +42,7 @@ classdef ArduinoSerial < matlab.System
                     end
                 end
 
-                % --- Read exactly one line ---
+                % Read exactly one line
                 if obj.SerialPort.NumBytesAvailable >= 17
                     line = readline(obj.SerialPort);
                     str = strtrim(char(line));
@@ -53,7 +53,7 @@ classdef ArduinoSerial < matlab.System
                     end
                 end
 
-                % --- Pace to 10ms ---
+                % Pace to 10ms
                 elapsed = toc(t_last);
                 remaining = target_step - elapsed;
                 if remaining > 0.001

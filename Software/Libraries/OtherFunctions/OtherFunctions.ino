@@ -6,11 +6,13 @@ float startVolt = 15.4;
 
 void setup() {
   Serial.begin(9600);
+  Serial.println("Start Conversions Now!");
 }
 
 void loop() {
-  float voltage;
+  float voltage, value;
   uint8_t PWMVal;
+  long num = 123456;
 
   PWMVal = voltToPWM(startVolt);
   Serial.print("PWM Val: ");
@@ -19,4 +21,8 @@ void loop() {
   voltage = PWMToVolt(PWMVal);
   Serial.print("Voltage: ");
   Serial.println(voltage, 4);
+
+  value = makeVoltage(num);
+  Serial.print("Voltage: ");
+  Serial.println(value, 4);
 }

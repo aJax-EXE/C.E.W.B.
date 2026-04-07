@@ -1,0 +1,118 @@
+classdef ArduinoSerial < matlab.System
+    properties (Access = private)
+        SerialPort
+    end
+
+    properties (Nontunable)
+        COMPort  = '/dev/ttyACM0'   % COM Port
+        BaudRate = 115200
+    end
+
+    methods (Access = protected)
+
+        function setupImpl(obj)
+            obj.SerialPort = serialport(obj.COMPort, obj.BaudRate);
+            obj.SerialPort.Timeout = 0.05;
+            configureTerminator(obj.SerialPort, "LF");
+            flush(obj.SerialPort);
+        end
+
+        % Input:   v_in      = voltage command (-6 to +6)
+        % Outputs: enc_out   = current encoder count from Arduino
+        %          v_out     = voltage currently being applied
+        %          limit_out = 1 when encoder limit reached, 0 otherwise
+        function [enc_out, limit_out] = stepImpl(obj)
+            persistent last_enc last_limit t_last
+            if isempty(last_enc),   last_enc   = 0; end
+            if isempty(last_limit), last_limit = 0; end
+            if isempty(t_last),     t_last     = tic; end
+
+            target_step = 0.010;
+
+            try
+                % Flush leftover bytes before sending
+                flush(obj.SerialPort);
+
+                % Send request: #voltage only (target lives on Arduino)
+                packet = sprintf('#%+07d\n', int32(v_in));
+                writeline(obj.SerialPort, packet);
+
+                % Wait for response
+                % Format: #±XXXXXX,±XXXXXX:B\n = 19 bytes
+                timeout = 0.009;
+                t_start = tic;
+                while obj.SerialPort.NumBytesAvailable < 19
+                    if toc(t_start) > timeout
+                        break;
+                    end
+                end
+
+                % Read and parse response
+                if obj.SerialPort.NumBytesAvailable >= 19
+                    raw = readline(obj.SerialPort);
+                    str = strtrim(char(raw));
+
+                    % Split on ':' to separate values from limit bit
+                    colon_idx = strfind(str, ':');
+
+                    if ~isempty(colon_idx)
+                        main_part  = str(1:colon_idx(1)-1);   % #±XXXXXX,±XXXXXX
+                        limit_part = str(colon_idx(1)+1:end); % B
+
+                        vals = sscanf(main_part, '#%d,%d');
+                        lim  = str2double(limit_part);
+
+                        if numel(vals) == 2 && ~isnan(lim)
+                            last_enc   = double(vals(1));
+                            last_limit = double(lim);
+                        end
+                    end
+                end
+
+                % Pace to 10ms
+                elapsed   = toc(t_last);
+                remaining = target_step - elapsed;
+                if remaining > 0.001
+                    pause(remaining);
+                end
+                t_last = tic;
+
+            catch
+                t_last = tic;
+            end
+
+            enc_out   = last_enc;
+            v_out     = last_v;
+            limit_out = last_limit;
+        end
+
+        function releaseImpl(obj)
+            delete(obj.SerialPort);
+        end
+
+        % Three scalar double outputs
+        function [sz1, sz2, sz3] = getOutputSizeImpl(~)
+            sz1 = [1 1];
+            sz2 = [1 1];
+            sz3 = [1 1];
+        end
+
+        function [dt1, dt2, dt3] = getOutputDataTypeImpl(~)
+            dt1 = 'double';
+            dt2 = 'double';
+            dt3 = 'double';
+        end
+
+        function [c1, c2, c3] = isOutputComplexImpl(~)
+            c1 = false;
+            c2 = false;
+            c3 = false;
+        end
+
+        function [f1, f2, f3] = isOutputFixedSizeImpl(~)
+            f1 = true;
+            f2 = true;
+            f3 = true;
+        end
+    end
+end

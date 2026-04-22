@@ -44,6 +44,7 @@ void loop() {
     // ---->>>> read encoder here <<<<<---- 
     sprintf (str_aux, "#%04d,%04d\n", v_motor , p_encoder );
     Serial.print(str_aux);
+    Serial.println(voltToPWM(v_motor));
   
     // ---- Read data from Linux ----
     if (Serial.available()) {

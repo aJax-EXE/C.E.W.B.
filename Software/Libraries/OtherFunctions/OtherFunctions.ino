@@ -25,4 +25,6 @@ void loop() {
   value = makeVoltage(num);
   Serial.print("Voltage: ");
   Serial.println(value, 4);
+
+  delay(1000);
 }

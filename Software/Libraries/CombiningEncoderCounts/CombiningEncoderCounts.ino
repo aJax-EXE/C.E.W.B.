@@ -7,8 +7,13 @@
 
 // Encoders can also have different pin values outside of 2 and 3,
 // but the pins chosen need to be apart of the same pcint grouping (found on pinout sheet)
-//
+
+// Motor Drive PWM Pins
+#define IN1 9   // Orange Wire
+#define IN2 10  // Blue Wire
+
 CEWBEncoder encoder(2,3,ENC2X);
+unsigned int timeStart = micros(), timeEnd = micros();
 
 void setup()
 {
@@ -22,19 +27,25 @@ void setup()
 
 void loop()
 {
-    digitalWrite(IN1,HIGH);
-    digitalWrite(IN2,LOW);
+    digitalWrite(IN1, LOW);
+    analogWrite(IN2, 10);
 
     static unsigned long last = 0;
 
-    if(millis() - last > 100)
-    {
-        last = millis();
+    timeEnd=micros();
+    int count = encoder.getCount();
+    timeStart=micros();
 
-        Serial.print("Count: ");
-        Serial.print(encoder.getCount());
+    Serial.println(timeEnd-timeStart);
 
-        Serial.print(" Dir: ");
-        Serial.println(encoder.getDirection());
-    }
+//    if(millis() - last > 100)
+//    {
+//        last = millis();
+//
+//        Serial.print("Count: ");
+//        Serial.print(encoder.getCount());
+//
+//        Serial.print(" Dir: ");
+//        Serial.println(encoder.getDirection());
+//    }
 }

@@ -8,7 +8,7 @@
 // Encoders can also have different pin values outside of 2 and 3,
 // but the pins chosen need to be apart of the same pcint grouping (found on pinout sheet)
 //
-CEWBEncoder encoder(2,3,ENC2X);
+CEWBEncoder encoder(2,3,ENC4X);
 
 void setup()
 {
@@ -23,9 +23,9 @@ void loop() {
 
 
   // Convert count to angle (degrees)
-  float angle = (count * 360.0) / 512 * 2;
+  float angle = (count * 360.0) / (512)/4;
   // Convert count to radians
-  float rads = (count * 2 * PI) / 512 * 2;
+  float rads = (count * 2 * PI) / 512 * 4;
 
   Serial.print("Count: ");
   Serial.print(count);

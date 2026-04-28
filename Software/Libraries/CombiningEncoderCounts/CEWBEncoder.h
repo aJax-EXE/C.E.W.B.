@@ -39,6 +39,9 @@ private:
     static CEWBEncoder* _encoders[8];
     static uint8_t _encoderCount;
 
+    // timing testing
+    unsigned long _start, _end;
+
 };
 
 #endif

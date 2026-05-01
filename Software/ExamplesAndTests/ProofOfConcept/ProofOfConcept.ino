@@ -15,6 +15,9 @@ uint8_t       PWMVal    = 0;
 unsigned long last_recv = 0;
 #define WATCHDOG_MS 500
 
+unsigned long previousMillis = 0;
+const unsigned long interval = 3000; // 1 second
+
 void spinMotor(float v);
 
 void setup() {
@@ -47,10 +50,10 @@ void loop() {
   }
 
   // ---- Watchdog — stop motor if Simulink stops sending ----
-  if (millis() - last_recv > WATCHDOG_MS) {
-    v_motor = 0.0;
-    spinMotor(0.0);
-  }
+//  if (millis() - last_recv > WATCHDOG_MS) {
+//    v_motor = 0.0;
+//    spinMotor(0.0);
+//  }
 
   // ---- Read encoder ----
   long p_encoder = enc1.getCount();
@@ -62,9 +65,35 @@ void loop() {
   if (Serial.availableForWrite() > 0) {
     long v_scaled_out = (long)(v_motor * 10000.0);
     char tx_buf[20];
-    snprintf(tx_buf, sizeof(tx_buf), "#%+07ld,%+07ld\n",
-             p_encoder, v_scaled_out);
+
+    if(v_scaled_out != 0) {
+      unsigned long currentMillis = millis();
+
+
+    // Check if 1 second has passed
+     if (currentMillis - previousMillis >= interval) {
+      previousMillis = currentMillis;
+
+      // Toggle state
+      v_motor = v_motor * -1;
+      spinMotor(v_motor);
+     }
+      unsigned long currentTime = millis();
+      snprintf(tx_buf, sizeof(tx_buf), "%+07ld,%ld\n",
+             p_encoder,currentTime);
     Serial.print(tx_buf);
+      
+    } else {
+      
+      snprintf(tx_buf, sizeof(tx_buf), "#%+07ld,%+07ld\n",
+             p_encoder, v_scaled_out);
+      Serial.print(tx_buf);
+      }
+    
+//    
+//    snprintf(tx_buf, sizeof(tx_buf), "#%+07ld,%+07ld\n",
+//             p_encoder, v_scaled_out);
+//    Serial.print(tx_buf);
   }
 }
 

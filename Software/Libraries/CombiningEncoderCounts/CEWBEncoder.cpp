@@ -44,7 +44,6 @@ void CEWBEncoder::begin() {
 }
 
 long CEWBEncoder::getCount() {
- 
   noInterrupts();
   long c = _count;
   interrupts();

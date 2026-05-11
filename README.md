@@ -10,3 +10,14 @@
 &emsp;  
 ## Introduction
 
+## Project Overview
+### Circuit Design
+### Data Transmission
+### Hardware Design
+
+Add some more sections here if needed
+
+## Results
+
+## Next Steps/List of Potential Solutions
+

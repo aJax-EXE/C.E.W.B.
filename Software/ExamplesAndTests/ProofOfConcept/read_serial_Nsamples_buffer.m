@@ -18,7 +18,7 @@ portName = '/dev/ttyACM0' ;
 fp = serialport(portName,115200);
 
 % settings
-nSamplesBuffer = 20e3 ;   % nSamples of the circular buffer in the matlab script
+nSamplesBuffer = 5e3 ;   % nSamples of the circular buffer in the matlab script
 
 % initialing variables
 CircularBuffer = zeros(nSamplesBuffer,2);
@@ -30,7 +30,7 @@ writeline(fp, "#15000");
 pause(5)
 
 %%
-figure
+figure()
 while(true)
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -40,20 +40,33 @@ while(true)
     line = readline(fp)         % guarantees full line ending in \n
 
     parts = split(line, ',');
-    firstPart = parts(1); % Result: "+001160"
-    secondPart = parts(2); % Result: "2650"
+
+    if(size(parts,1)==2)
+        
+        firstPart = parts(1); % Result: "+001160"
+        secondPart = parts(2); % Result: "2650"
 
 
-    CircularBuffer(count,1) = str2double(secondPart);
-    CircularBuffer(count,2) = str2double(firstPart);
-    count = mod(count, nSamplesBuffer) + 1;
+        CircularBuffer(count,1) = str2double(firstPart);
+        CircularBuffer(count,2) = str2double(secondPart);
+        count = mod(count, nSamplesBuffer) + 1
 
-    % dvdt = diff(CircularBuffer(:,2)) ./ diff(CircularBuffer(:,1));
-    
-    if( mod(count,1000) == 1)
-        plot(CircularBuffer(:,1),CircularBuffer(:,2),'.')
-        % plot(dvdt,'.-')
-        drawnow
+        % dvdt = diff(CircularBuffer(:,2)) ./ diff(CircularBuffer(:,1));
+
+        if( mod(count,100) == 0)
+            subplot(1,2,1)
+            disp('entrou!!!')
+            plot(CircularBuffer(:,1),'b'); hold on;
+            plot(CircularBuffer(:,2)/255 * 20,'r'); 
+            ylim([-20 20])
+            
+
+            subplot(1,2,2)
+            plot(CircularBuffer(:,2),'.-')
+            ylim([-260 260])
+            % plot(dvdt,'.-')
+            drawnow
+        end
     end
 
 end

@@ -5,12 +5,32 @@
 **Students:** [Alyssa Jackson](https://github.com/aJax-EXE) (Electrical and Computer Engineering)  
 &emsp;&emsp;&emsp;&emsp;&emsp;Eric Pollert (Mechanical Engineering)  
 &emsp;&emsp;&emsp;&emsp;&emsp;[Isaiah Knox](https://github.com/iknox001) (Mechanical Engineering)  
+
+---
+
+[The CEWB](/Images/IMG_6527.jpg)  
+*The CEWB, fully built*  
 &emsp;  
-&emsp;
-&emsp;  
+
+
 ## Introduction
+C.E.W.B. (name pending) is a low-cost, open-source electromechanical teaching platform designed for teaching and applying control systems in a real-world platform. It was developed as a direct functional replacement for the Quanser Qube-Servo 2, a $5,000 proprietary device that is now outdated and needs an old version of MATLAB to even use.
+
+The device supports the same core laboratory experiments as the Qube-Servo 2, including angular position control with an inertia disc and inverted pendulum balancing. It is designed to be self-contained, portable, and fully compatible with MATLAB and Simulink.
+
+All design files, code, and documentation are publicly available in this repository so that the device can be reproduced by any institution without reliance on proprietary hardware or software.
 
 ## Project Overview
+This project set out to design a low-cost, open-source replacement for the Quanser Qube-Servo 2, a $5,000 device used in control systems classes. The target was a fully functional prototype delivered by May 2026 at under $1,000 per unit, capable of supporting the same lab experiments, including angular position control with an inertia disc and inverted pendulum balancing, while being self-contained, portable, and compatible with MATLAB/Simulink. 
+
+The design integrates all components into a Nanuk 905 protective case with built-in storage for attachments, cables, and the power supply. The system uses an Arduino microcontroller, a motor driver, and a custom PCB, with two interchangeable magnetic attachments, an inertia disc and a pendulum, mirroring the Qube-Servo 2's functionality. The projected per-unit production cost of $763.68 comes in well under the $1,000 target. 
+
+The device met most implementation requirements. Data transmission, MATLAB/Simulink compatibility, third-party manufacturability, self-contained storage, and transport protection all passed evaluation. Open-source documentation, including CAD files, a bill of materials, and assembly instructions, has been prepared and made publicly available. 
+
+However, the device did not fully replicate the closed-loop control performance of the Qube-Servo 2. Arduino’s data transmission rate is approximately an order of magnitude slower than the proprietary controller used in the Qube-Servo 2, causing significant control loop delays and excessive overshoot during inertia disc testing. As a result, the pendulum balancing test was not attempted. 
+
+The primary recommended next step is to replace the Arduino with a faster microcontroller, retest the system using the same control experiments, and proceed to a small production run once performance requirements are confirmed to be met. 
+
 ### Circuit Design
 ### Data Transmission
 ### Hardware Design
@@ -38,4 +58,4 @@ The two attachements are the inertia disc and the pendulum. The inetia disc is a
 ## Results
 
 ## Next Steps/List of Potential Solutions
-
+In order to fix up the fundamental issues of the CEWB and to make 

@@ -40,7 +40,7 @@
 
 ---
 
-[The CEWB](/Images/IMG_6527.jpg)  
+![The CEWB](/Images/IMG_6527.jpg)  
 *The CEWB, fully built*  
 &emsp;  
 
@@ -121,16 +121,32 @@ C.E.W.B./
 
 ### Data Transmission
 ## Hardware Design
+&emsp;  
+![3d Models of the CEWB](/Images/3dModelImages.png)  
+*3d Models of the CEWB and its parts*  
+&emsp;  
+
 ### Circuit Design  
+![The CEWB Schematics](/Images/CEWBPCBSchematic.png)  
+*The CEWB electrical schematic*  
+&emsp;  
+
+![The CEWB PCB Model](/Images/CEWBForwardPCBModel.png)  
+*The CEWB PCB Model*  
+&emsp;  
+
 The electrical system is built around an Arduino Uno R3 microcontroller and an Adafruit DRV8871 motor driver, both connected through a custom PCB. The PCB acts as a junction point between the motor, encoders, and microcontroller, consolidating all wiring and reducing the risk of loose connections. A 24V Mean Well GST90A24-P1M power supply provides power to the system via a front-panel power port. A front-panel USB-B port connects the Arduino to the user's laptop for data transmission.
 
 The PCB is insulated from the aluminum mounting panel using an acrylic backing plate to prevent electrical interference.
 
 ### Accessory Storage
+![The Storage Lid](/Images/IMG_6529.jpg)  
+*The storage lid that houses the CEWB attachments*  
+&emsp;  
+
 The accessory storage compartment is made up of two peices of hardboard and one peice of foam with cutouts for the the accessories to fit into. The rear panel of hardboard has magenets glued into it which allow the attachments to be secured in their respective locations during storage. Hardboard was selected for the front and rear panel as it is a light and cheap but sturdy material. Foam was chosen for the middle panel as it is low density and can fill the space between the boards without increasing the weight significantly. The three panels are glued together with super glue and are fixed into top of the Nanuk 905 case using thread forming screws.
 
 ### Device Deck
-
 The main part of the deck of the device is a bent peice of alluminum sheet metal which is screwed into the Nanuk 905 case using thread forming screws and serves as a mounting plate for the rest of the components. This part is bent the way it is in order to create a compartment for storing the power supply and the data transmission cable. The top surface of this panel has two ports. A USB port where the data transmission cable is plugged in and a power port where the device is connected to the power supply. The ports were added to clean up the vissual appearance of the device and revove the need for cables to be plugged directly into the electrical compartment. One the right side of the panel there is a cavity with ushaped bent peice of alluminum sheet metal mounted to the bottom of the panel which is used both as a mounting location for the motor housing and as a barrier between the user and the internal components of the device. The cavity is required to allow the motor housing to fold into the device when it is being stored. The trough contains hole to allow wires to pass through between the motor housing and the electrical compartment and this hole is lined with a silicone gromet which protects the wires passing through the hole from fraying when the motor hosuing is moved between its storage and opperation positions.
 
 ### Motor Housing
@@ -138,6 +154,10 @@ The motor housing consists of 3 main structural components which are all allumin
 
 
 ### Electrical Compartment
+![The CEWB electrical compartment](/Images/IMG_6528.jpg)  
+*The CEWB's electrical compartmemt on the left*  
+&emsp;  
+
 The electrical compartment is on placed in between the bend in the top panel of the device deck and the trough. The electrical components including the motor driver, Arduino, and PCB are mounted to the backside of the bend of the panel using nuts and bolts and a peice of acrylic sized to match the PCB with the purpose of insulating the exposed cicuitry of the PCB from the aluminum panel to ensure the panel doesn't cause interference. 
 
 
@@ -155,7 +175,7 @@ The two attachements are the inertia disc and the pendulum. The inetia disc is a
 - CEWBFunctions (included in `Software/MATLAB/Libraries/CEWBFunctions/`)
 
 **MATLAB/Simulink**
-- MATLAB R2024b or earlier (note: R2025b has known compatibility issues — see [Known Limitations](#known-limitations))
+- MATLAB R2024b or newer
 - Simulink
 - No additional toolboxes required — serial communication is handled via a custom `matlab.System` object
 
@@ -257,8 +277,11 @@ Note: `voltToPWM` maps voltage against a 24V maximum (`maxVolt = 24`). Passing v
 
 ### Running Your First Experiment
 
-A simple open-loop voltage test:
+![Block Diagram of voltage input and encoder output](/Images/BlockDiagram.png)  
+*The block diagram of the first example experiment*  
+&emsp;  
 
+A simple open-loop voltage test:
 1. Add a **Signal Generator** block (square wave, amplitude 3, frequency 0.5 Hz).
 2. Wire it to `v_in` on the ArduinoSerial block.
 3. Add a **Gain** block after `enc_out` with value `360/2048` to convert counts to degrees.
@@ -354,6 +377,18 @@ In order to fix up the fundamental issues of the CEWB and to make improvements t
 
 * Combine the `CEWBEncoder` and the `CEWBFunctions` libraries
     * While this would do nothing in terms of speed or efficiency, it would just consolate everything and make it simplier for users.
+
+* Tune the 3d Model
+    * There are still some slight measurement and sizing issues when sending the part requests out and receiving them. While the overall parts are modeled and made, they can be tweaked to be better fitting without alteration.
+
+* Include the companies used to fabricate the parts and the exact order requests made
+    * If this project is to be made and used on a worldwide scale, then the companies used should be listed. The most important part would be to have the exact measurements and what to put in the request for the diffennt pieces to be made.
+
+* Look into current surge protection
+    * While the motor power is somewhat contained with the motor driver, if the motor can't spin and causes the current to spike, it could cause the other electrical components to be damaged.
+
+* Come up with a meaning for C.E.W.B.
+    * This name was designed more or less to mock the Qube's spelling, but it doesn't actually mean anything. A new name entirely can be made up, but just keep the idea of having a funny spelling of 'cube'.
 
 
 ### After CEWB Functionality is Reached

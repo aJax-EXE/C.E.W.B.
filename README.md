@@ -8,17 +8,51 @@
 
 ---
 
+## Table of Contents
+1. [Introduction](#introduction)
+2. [Project Overview](#project-overview)
+3. [System Specifications](#system-specifications)
+4. [Repository Structure](#repository-structure)
+5. [Hardware](#hardware)
+   - [Circuit Design](#circuit-design)
+   - [Accessory Storage](#accessory-storage)
+   - [Device Deck](#device-deck)
+   - [Motor Housing](#motor-housing)
+   - [Electrical Compartment](#electrical-compartment)
+   - [Attachments](#attachments)
+6. [Software](#software)
+   - [Dependencies](#dependencies)
+   - [Arduino Code](#arduino-code)
+   - [MATLAB/Simulink Interface](#matlabsimulink-interface)
+   - [Custom Libraries](#custom-libraries)
+7. [Getting Started](#getting-started)
+   - [Hardware Setup](#hardware-setup)
+   - [Software Setup](#software-setup)
+   - [Running Your First Experiment](#running-your-first-experiment)
+8. [Lab Experiments](#lab-experiments)
+   - [Angular Position Control (Inertia Disc)](#angular-position-control-inertia-disc)
+   - [Inverted Pendulum Balancing](#inverted-pendulum-balancing)
+9. [Results](#results)
+10. [Known Limitations](#known-limitations)
+11. [Next Steps](#next-steps)
+12. [Contributing](#contributing)
+13. [License](#license)
+
+---
+
 [The CEWB](/Images/IMG_6527.jpg)  
 *The CEWB, fully built*  
 &emsp;  
 
 
 ## Introduction
-C.E.W.B. (name pending) is a low-cost, open-source electromechanical teaching platform designed for teaching and applying control systems in a real-world platform. It was developed as a direct functional replacement for the Quanser Qube-Servo 2, a $5,000 proprietary device that is now outdated and needs an old version of MATLAB to even use.
+C.E.W.B. (name pending; refered to as 'CEWB' throughout the README) is a low-cost, open-source electromechanical teaching platform designed for teaching and applying control systems in a real-world platform. It was developed as a direct functional replacement for the Quanser Qube-Servo 2, a $5,000 proprietary device that is now outdated and needs an old version of MATLAB to even use.
 
 The device supports the same core laboratory experiments as the Qube-Servo 2, including angular position control with an inertia disc and inverted pendulum balancing. It is designed to be self-contained, portable, and fully compatible with MATLAB and Simulink.
 
 All design files, code, and documentation are publicly available in this repository so that the device can be reproduced by any institution without reliance on proprietary hardware or software.
+
+---
 
 ## Project Overview
 This project set out to design a low-cost, open-source replacement for the Quanser Qube-Servo 2, a $5,000 device used in control systems classes. The target was a fully functional prototype delivered by May 2026 at under $1,000 per unit, capable of supporting the same lab experiments, including angular position control with an inertia disc and inverted pendulum balancing, while being self-contained, portable, and compatible with MATLAB/Simulink. 
@@ -31,12 +65,12 @@ However, the device did not fully replicate the closed-loop control performance 
 
 The primary recommended next step is to replace the Arduino with a faster microcontroller, retest the system using the same control experiments, and proceed to a small production run once performance requirements are confirmed to be met. 
 
+---
+
 ### Circuit Design
 ### Data Transmission
 ### Hardware Design
-
 #### Accessory Storage
-
 The accessory storage compartment is made up of two peices of hardboard and one peice of foam with cutouts for the the accessories to fit into. The rear panel of hardboard has magenets glued into it which allow the attachments to be secured in their respective locations during storage. Hardboard was selected for the front and rear panel as it is a light and cheap but sturdy material. Foam was chosen for the middle panel as it is low density and can fill the space between the boards without increasing the weight significantly. The three panels are glued together with super glue and are fixed into top of the Nanuk 905 case using thread forming screws.
 
 #### Device Deck
@@ -57,5 +91,87 @@ The two attachements are the inertia disc and the pendulum. The inetia disc is a
 
 ## Results
 
-## Next Steps/List of Potential Solutions
-In order to fix up the fundamental issues of the CEWB and to make 
+The device met the following design requirements:
+
+| Requirement | Target | Result |
+|---|---|---|
+| Accurate data transmission | Pass | ✅ Pass |
+| MATLAB/Simulink compatibility | Pass | ✅ Pass |
+| Cost target | < $1,000 | ✅ $763.68 |
+| Self-contained storage | Pass | ✅ Pass |
+| Transport protection | Pass | ✅ Pass (Nanuk 905, ASTM D-4169 DC-18 certified) |
+| Third-party manufacturability | Pass | ✅ Pass |
+| Software updatability | Pass | ✅ Pass (on supported MATLAB versions) |
+| Qube function replication | Pass | ❌ Partial — inertia disc overshoot; pendulum not attempted |
+| Motor and encoder performance | Comparable | ❌ Not met under closed-loop conditions |
+
+---
+
+## Known Limitations
+
+**Serial latency (~20ms round-trip)**  
+The Arduino Uno communicates over USB serial at approximately 50Hz, compared to the Qube-Servo 2's ~500Hz proprietary interface. This introduces significant control loop delay, causing excessive overshoot at higher PID gains. The background timer in `ArduinoSerial.m` mitigates this partially by running at 200Hz independently of Simulink, but the underlying serial round-trip remains the bottleneck.
+
+**Encoder noise at high motor speeds**  
+At high voltages, motor vibration can introduce noise on the encoder signal lines, causing occasional miscounts. Adding 10–100nF ceramic capacitors between each encoder signal pin and GND reduces this significantly.
+
+**voltToPWM maps against 24V maximum**  
+The `voltToPWM` function in CEWBFunctions maps input voltage against a 24V maximum. Voltages between ±6V — the recommended operating range — use only 25% of the available PWM range. If more motor resolution is needed, change `maxVolt` in `CEWBFunctions.cpp` to match your operating voltage range.
+
+---
+
+## Next Steps
+### List of Issues
+In order to fix up the fundamental issues of the CEWB and to make improvements to it in the futuree, the following suggestions should be looked into:  
+
+* Research different microcontrollers
+    * The Arduino Uno R3 is simply not powerful enough to spin the motor, count the encoder position, and transmit and receive data to and from Simulink in real time accurately. To improve speeds and ease the computational load on one microcontroller, it is recommended to look into:
+        - Using one faster microcontroller (Raspberry Pi Pico, STM32, Teensy 4.x, etc.)
+        - Using two (or more) microcontrollers
+            - Having one control the motor and handle the encoder counting while one only deals wtih the data transmission, having one control the motor, one count the encoder, and one transmit the data, etc.
+
+* Switching the data that is transmitted to and from Simulink from strings to bytes
+    * The string transmission format can still be used as a sanity check/user-readible test, but since transmitting bytes is much faster, then the final product should.
+
+* Research different ways to transmit data at a higher rate
+    * The Arduino Uno communicates over USB serial at approximately 50Hz, while the Qube 2 can transmit at ~500Hz. Look into how the Qube 2 can do this and figure out how to make the CEWB faster.
+
+* Look into wireless encoders for the inverted pendulum
+    * With the current CEWB setup (and with the current inspiration with the Quanser Qubes) the motor hub with the added inverted pendulum attachment can't spin 360° due to the wire that connects to the audio jack port. While this isn't a big deal when trying the just have the pendulum balance at 180°, it can't do it at any other angle without being able to spin constantly around 360°. This can be solved by removing the pendulum's encoder cable and having powered and connected wireless.
+
+* Add a strap to stop the inverted pendulum from keeping the CEWB open
+    * With the current setup of the storage area of the CEWB attachements, the inverted pendulum's shaft falls out of the cutout opening that it sits in and props up the lid, keeping it from closing. A simple strap would solve this problem without too much issue or extreme redesigns.
+
+* Look into making more attachments
+    * The types of attachments are good, but having inertia disks that are different weights and different sizes would be good to see when teaching/learning about control systems.
+
+
+### After CEWB Functionality is Reached
+Once the CEWB is in a working state, the following steps are planned:  
+1. Retest angular position control with inertia disc using the same PID experiments
+2. Attempt inverted pendulum balancing
+3. Assemble a small production run for deployment in the control systems course
+4. Provide a prototype unit to the course instructor for curriculum integration
+
+---
+
+## Contributing
+
+This project is open-source and contributions are welcome. To contribute:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/your-feature`)
+3. Commit your changes (`git commit -m 'Add your feature'`)
+4. Push to the branch (`git push origin feature/your-feature`)
+5. Open a pull request
+
+For questions or technical support, contact:
+- **Dr. Talles Santos** (project sponsor): Talles.Santos@colorado.edu
+- **Dr. Nathan McNeil** (project sponsor): Nathan.Mcneil@colorado.edu
+- **Alyssa Jackson** (project member): alyssajackson436@gmail.com
+
+---
+
+## License
+
+This project is open-source. All CAD files, code, and documentation are made publicly available for reproduction and modification. See the repository for license details.
